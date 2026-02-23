@@ -1,0 +1,162 @@
+{
+    "tips": {
+        "Reading": {
+            "emoji": "📖",
+            "tips": [
+                "⏱️ <b>Vaqtni boshqaring:</b> Har bir passage uchun 20 daqiqa ajrating. 3 ta passage = 60 daqiqa.",
+                "👀 <b>Skimming:</b> Avval matnni tez ko'z yugurtirib, umumiy g'oyani tushuning.",
+                "🔍 <b>Scanning:</b> Savolga javob qidirayotganda, kalit so'zlarni izlang.",
+                "❌ <b>Hamma so'zni o'qimang:</b> Har bir so'zni tushunish shart emas, kontekstdan foydalaning.",
+                "✍️ <b>Javobni tekshiring:</b> Javobingiz grammatik jihatdan to'g'ri ekanligiga ishonch hosil qiling.",
+                "📝 <b>True/False/Not Given:</b> 'Not Given' degani matnda umuman aytilmagan, 'False' esa qarama-qarshi.",
+                "🎯 <b>Sarlavhadan boshlang:</b> Sarlavha va birinchi gap sizga matn haqida ko'p narsa aytadi."
+            ]
+        },
+        "Listening": {
+            "emoji": "🎧",
+            "tips": [
+                "📋 <b>Oldindan o'qing:</b> Audio boshlanishidan oldin savollarni o'qib chiqing.",
+                "🔢 <b>Raqamlarga e'tibor:</b> Sanalar, vaqtlar, narxlar — aniq yozing.",
+                "🔄 <b>Sinonimlar:</b> Audiodagi so'z va savoldagi so'z bir xil bo'lmasligi mumkin.",
+                "✏️ <b>Yozib boring:</b> Eshitganingizni qisqacha belgilab boring.",
+                "⚠️ <b>O'zgarishlarga e'tibor:</b> So'zlovchi fikrni o'zgartirishi mumkin ('Actually, I meant...').",
+                "🎯 <b>Bir marta eshitasiz:</b> Audio faqat 1 marta yangraydi, diqqatli bo'ling!",
+                "📍 <b>Section 4 eng qiyin:</b> Oxirgi bo'lim akademik ma'ruza, oldindan tayyor bo'ling."
+            ]
+        },
+        "Grammar": {
+            "emoji": "✏️",
+            "tips": [
+                "⏰ <b>Tense mos kelsin:</b> Past, present, future — vaqt ko'rsatkichlariga qarang.",
+                "📐 <b>Subject-verb agreement:</b> Birlik/ko'plik mosligini tekshiring.",
+                "🔗 <b>Linking words:</b> However, moreover, although — ularni to'g'ri ishlating.",
+                "📖 <b>Articles:</b> a/an/the qo'llash qoidalarini yaxshi bilib oling.",
+                "🎭 <b>Passive voice:</b> IELTS Writing uchun passive juda muhim.",
+                "🔄 <b>Conditionals:</b> 0, 1, 2, 3 — conditional turlarini farqlang.",
+                "✅ <b>Reported speech:</b> 'She said that...' — vaqtni bir pog'onaga tushiring."
+            ]
+        },
+        "Vocabulary": {
+            "emoji": "📝",
+            "tips": [
+                "📚 <b>Kontekstda o'rganing:</b> So'zni yolg'iz emas, gap ichida yodlang.",
+                "🔄 <b>Sinonimlarda o'ylang:</b> IELTS bir xil so'zni takrorlamaslikni yoqtiradi.",
+                "📖 <b>Collocations:</b> 'make a decision' (do a decision emas) — to'g'ri birikmalar.",
+                "🎯 <b>Topic vocabulary:</b> Education, Environment, Technology — mavzu so'zlari.",
+                "✍️ <b>Har kuni 5 so'z:</b> Kuniga 5 ta yangi so'z o'rganing va ishlatib ko'ring.",
+                "🧠 <b>Word families:</b> succeed → success → successful → successfully.",
+                "❌ <b>Slang ishlatmang:</b> Rasmiy akademik so'zlarni afzal ko'ring."
+            ]
+        },
+        "Speaking": {
+            "emoji": "🗣️",
+            "tips": [
+                "🗣️ <b>Tabiiy gapiring:</b> Yodlangan javoblar past ball oladi.",
+                "📐 <b>Tuzilmali javob:</b> Fikr → Sabab → Misol — shu tartibda javob bering.",
+                "⏱️ <b>Part 2 da 2 daqiqa:</b> 1 daqiqa tayyorlanish, 1-2 daqiqa gapirish.",
+                "🎯 <b>Fillers ishlating:</b> 'Well...', 'To be honest...', 'I'd say that...'",
+                "📈 <b>Murakkab grammatika:</b> Band 7+ uchun conditionals, relative clauses ishlating.",
+                "🗂️ <b>Mavzularni tayyorlang:</b> Hometown, hobbies, family, future plans.",
+                "😊 <b>Ishonchli bo'ling:</b> Ko'z kontakti va tabiiy imo-ishora muhim."
+            ]
+        }
+    },
+    "writing_topics": [
+        {
+            "task": 1,
+            "type": "Graph/Chart",
+            "topic": "The bar chart shows the percentage of students studying different subjects at a university in 2020 and 2025.",
+            "key_phrases": [
+                "increased significantly",
+                "declined sharply",
+                "remained stable",
+                "the most popular",
+                "in contrast"
+            ]
+        },
+        {
+            "task": 1,
+            "type": "Process",
+            "topic": "The diagram shows the process of producing chocolate from cocoa beans.",
+            "key_phrases": [
+                "firstly",
+                "subsequently",
+                "following this",
+                "the final stage involves",
+                "is then processed"
+            ]
+        },
+        {
+            "task": 2,
+            "type": "Opinion",
+            "topic": "Some people think that the internet has made people more isolated. Others believe it has brought people closer together. Discuss both views and give your opinion.",
+            "key_phrases": [
+                "On one hand",
+                "Conversely",
+                "In my opinion",
+                "It could be argued that",
+                "To conclude"
+            ]
+        },
+        {
+            "task": 2,
+            "type": "Problem/Solution",
+            "topic": "Many cities are facing serious environmental problems. What are the causes of these problems and what measures could be taken to address them?",
+            "key_phrases": [
+                "A major cause is",
+                "This leads to",
+                "One effective solution would be",
+                "Another approach is",
+                "In conclusion"
+            ]
+        },
+        {
+            "task": 2,
+            "type": "Advantage/Disadvantage",
+            "topic": "More people are working from home nowadays. What are the advantages and disadvantages of this trend?",
+            "key_phrases": [
+                "A significant advantage is",
+                "On the other hand",
+                "Furthermore",
+                "Despite these benefits",
+                "Overall"
+            ]
+        },
+        {
+            "task": 2,
+            "type": "Discussion",
+            "topic": "Some people believe that children should start learning a foreign language at primary school. Others think they should wait until secondary school. Discuss both views.",
+            "key_phrases": [
+                "Proponents argue that",
+                "Critics suggest that",
+                "From my perspective",
+                "While it is true that",
+                "Taking everything into account"
+            ]
+        },
+        {
+            "task": 2,
+            "type": "Opinion",
+            "topic": "Universities should focus on providing academic skills rather than preparing students for employment. To what extent do you agree or disagree?",
+            "key_phrases": [
+                "I firmly believe",
+                "It is often argued",
+                "However",
+                "A compelling argument is",
+                "In summary"
+            ]
+        },
+        {
+            "task": 2,
+            "type": "Problem/Solution",
+            "topic": "Obesity among young people is increasing worldwide. What are the main causes and what solutions can you suggest?",
+            "key_phrases": [
+                "The primary reason is",
+                "This results in",
+                "To tackle this issue",
+                "Governments could",
+                "Ultimately"
+            ]
+        }
+    ]
+}

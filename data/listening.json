@@ -1,0 +1,559 @@
+{
+    "subject": {
+        "name": "Listening",
+        "emoji": "🎧",
+        "description": "IELTS Listening section"
+    },
+    "questions": [
+        {
+            "text": "You hear: 'The meeting has been rescheduled to 3 PM on Friday.' When is the meeting?",
+            "options": {
+                "a": "3 PM Thursday",
+                "b": "3 PM Friday",
+                "c": "2 PM Friday",
+                "d": "3 PM Monday"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'Could you please turn down the volume? I'm trying to study.' The speaker wants:",
+            "options": {
+                "a": "Louder music",
+                "b": "Quieter environment",
+                "c": "Help studying",
+                "d": "A new room"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'The library closes at 9 PM on weekdays and 5 PM on weekends.' Weekend closing time is:",
+            "options": {
+                "a": "9 PM",
+                "b": "7 PM",
+                "c": "5 PM",
+                "d": "6 PM"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'I'd like to book a table for four at seven thirty.' How many people is the reservation for?",
+            "options": {
+                "a": "Two",
+                "b": "Three",
+                "c": "Four",
+                "d": "Seven"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'The next bus to the city center leaves in fifteen minutes from platform 3.' Which platform?",
+            "options": {
+                "a": "Platform 1",
+                "b": "Platform 2",
+                "c": "Platform 3",
+                "d": "Platform 4"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'Excuse me, is there a pharmacy nearby?' The speaker is looking for:",
+            "options": {
+                "a": "A hospital",
+                "b": "A pharmacy",
+                "c": "A supermarket",
+                "d": "A bank"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'The temperature will drop to minus five degrees tonight.' Tonight's temperature will be:",
+            "options": {
+                "a": "5 degrees",
+                "b": "15 degrees",
+                "c": "-5 degrees",
+                "d": "0 degrees"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'I've been waiting for over an hour. My appointment was at two.' The appointment time was:",
+            "options": {
+                "a": "1 PM",
+                "b": "2 PM",
+                "c": "3 PM",
+                "d": "12 PM"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'The rent includes water and electricity but not internet.' What is NOT included?",
+            "options": {
+                "a": "Water",
+                "b": "Electricity",
+                "c": "Internet",
+                "d": "All are included"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'Please fasten your seatbelts. We will be landing in approximately twenty minutes.' Landing time is:",
+            "options": {
+                "a": "10 minutes",
+                "b": "15 minutes",
+                "c": "20 minutes",
+                "d": "30 minutes"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear a conversation: 'I think we should postpone the event until next month. The venue isn't ready yet.' Why postpone?",
+            "options": {
+                "a": "Bad weather",
+                "b": "Venue not ready",
+                "c": "No guests",
+                "d": "Budget issues"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'The course fee is £450 for the full program, or £180 per module if you prefer to study part-time.' The full program costs:",
+            "options": {
+                "a": "£180",
+                "b": "£350",
+                "c": "£450",
+                "d": "£500"
+            },
+            "correct": "c",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear a lecture: 'The experiment was conducted over a period of six months with 200 participants.' How long was the experiment?",
+            "options": {
+                "a": "3 months",
+                "b": "6 months",
+                "c": "12 months",
+                "d": "200 months"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'Although the company reported record profits, they announced plans to reduce their workforce by 15%.' The company will:",
+            "options": {
+                "a": "Hire more staff",
+                "b": "Reduce staff by 15%",
+                "c": "Maintain current staff",
+                "d": "Close down"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'The assignment deadline has been extended from March 15th to March 22nd.' The new deadline is:",
+            "options": {
+                "a": "March 8th",
+                "b": "March 15th",
+                "c": "March 22nd",
+                "d": "March 29th"
+            },
+            "correct": "c",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'To apply, you need to submit your CV, two references, and a personal statement.' How many documents are required?",
+            "options": {
+                "a": "Two",
+                "b": "Three",
+                "c": "Four",
+                "d": "Five"
+            },
+            "correct": "c",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'The hotel offers a complimentary breakfast buffet for all guests between 7 and 10 AM.' 'Complimentary' means:",
+            "options": {
+                "a": "Expensive",
+                "b": "Limited",
+                "c": "Free",
+                "d": "Optional"
+            },
+            "correct": "c",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'The new policy will come into effect from the first of January.' When does the policy start?",
+            "options": {
+                "a": "December 1st",
+                "b": "January 1st",
+                "c": "February 1st",
+                "d": "Immediately"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear a discussion: 'The research findings were inconclusive, meaning further study is needed.' 'Inconclusive' means:",
+            "options": {
+                "a": "Definitive",
+                "b": "Not definitive",
+                "c": "Positive",
+                "d": "Negative"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'The discount applies only to purchases over fifty dollars and cannot be combined with other offers.' The discount requires:",
+            "options": {
+                "a": "Any purchase amount",
+                "b": "Purchases over $50",
+                "c": "Membership card",
+                "d": "Online orders only"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear a lecture: 'The researcher's methodology has been criticized for its small sample size and lack of control variables.' The main criticism is about:",
+            "options": {
+                "a": "The topic choice",
+                "b": "Research methodology",
+                "c": "Publication timing",
+                "d": "Funding sources"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The speaker draws a parallel between the current economic downturn and the recession of 2008.' The speaker is:",
+            "options": {
+                "a": "Ignoring history",
+                "b": "Making a comparison",
+                "c": "Predicting the future",
+                "d": "Dismissing evidence"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'While the initial results were promising, subsequent trials failed to replicate the findings.' The later trials:",
+            "options": {
+                "a": "Confirmed results",
+                "b": "Improved results",
+                "c": "Failed to reproduce results",
+                "d": "Were not conducted"
+            },
+            "correct": "c",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The professor suggests that cultural context plays a more significant role than previously acknowledged.' Culture's role is:",
+            "options": {
+                "a": "Less than thought",
+                "b": "Greater than previously believed",
+                "c": "Unchanged",
+                "d": "Irrelevant"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The implications of this policy extend far beyond its intended scope.' The policy's effects are:",
+            "options": {
+                "a": "Limited",
+                "b": "Exactly as planned",
+                "c": "Wider than intended",
+                "d": "Non-existent"
+            },
+            "correct": "c",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The study's authors acknowledge potential bias in their selection criteria.' The authors recognize:",
+            "options": {
+                "a": "Perfect methodology",
+                "b": "Possible bias",
+                "c": "No limitations",
+                "d": "Funding problems"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'Despite overwhelming evidence to the contrary, the theory continues to have proponents.' The theory is:",
+            "options": {
+                "a": "Universally accepted",
+                "b": "Supported despite counter-evidence",
+                "c": "Completely abandoned",
+                "d": "Newly proposed"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The phenomenon cannot be explained by a single factor; rather, it involves a complex interplay of variables.' The phenomenon is:",
+            "options": {
+                "a": "Simple",
+                "b": "Caused by one factor",
+                "c": "Multi-factorial",
+                "d": "Unexplainable"
+            },
+            "correct": "c",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The panel agreed that interdisciplinary approaches yield more comprehensive insights.' Interdisciplinary means:",
+            "options": {
+                "a": "Single subject focus",
+                "b": "Combining multiple fields",
+                "c": "Avoiding specialization",
+                "d": "Using only one method"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The correlation between socioeconomic status and educational attainment has been well documented.' There is a link between:",
+            "options": {
+                "a": "Weather and education",
+                "b": "Wealth and educational achievement",
+                "c": "Age and income",
+                "d": "Location and health"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'Please report to the reception desk when you arrive.' Where should you go first?",
+            "options": {
+                "a": "The cafeteria",
+                "b": "The reception desk",
+                "c": "The office",
+                "d": "The parking lot"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'The store is open from 9 AM to 6 PM, Monday to Saturday.' Is the store open on Sundays?",
+            "options": {
+                "a": "Yes, all day",
+                "b": "Yes, half day",
+                "c": "Not mentioned but likely closed",
+                "d": "Yes, evening only"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'Take the second turning on the left and the hospital is on your right.' The hospital is on:",
+            "options": {
+                "a": "The left",
+                "b": "The right",
+                "c": "Straight ahead",
+                "d": "Behind you"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'The train to London departs at quarter past eight from platform 7.' Departure time is:",
+            "options": {
+                "a": "7:15",
+                "b": "7:45",
+                "c": "8:15",
+                "d": "8:45"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'I'm afraid we're fully booked this weekend. Would Tuesday work for you?' The earliest available time is:",
+            "options": {
+                "a": "This weekend",
+                "b": "Monday",
+                "c": "Tuesday",
+                "d": "Next weekend"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'The seminar will be held in the main auditorium, not the conference room as previously announced.' The new location is:",
+            "options": {
+                "a": "Conference room",
+                "b": "Main auditorium",
+                "c": "Lecture hall",
+                "d": "Online"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'Participants must register by the end of this week to secure the early bird discount.' Early bird discount requires:",
+            "options": {
+                "a": "Immediate payment",
+                "b": "Registration by end of week",
+                "c": "Group booking",
+                "d": "Student ID"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'The results indicate a strong positive correlation between exercise frequency and mental well-being.' Exercise and mental health are:",
+            "options": {
+                "a": "Negatively connected",
+                "b": "Positively connected",
+                "c": "Unrelated",
+                "d": "Weakly connected"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'The warranty covers manufacturing defects for two years but does not cover accidental damage.' The warranty does NOT cover:",
+            "options": {
+                "a": "Manufacturing defects",
+                "b": "Accidental damage",
+                "c": "Both",
+                "d": "Neither"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'The survey revealed that 68% of respondents favored working from home at least two days a week.' Most respondents prefer:",
+            "options": {
+                "a": "Full office work",
+                "b": "Hybrid work with some home days",
+                "c": "Full remote work",
+                "d": "No preference"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear a panel: 'The ethical considerations of genetic modification remain a contentious issue in the scientific community.' Genetic modification ethics are:",
+            "options": {
+                "a": "Universally agreed upon",
+                "b": "Controversial",
+                "c": "Ignored",
+                "d": "Resolved"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The speaker contends that automation will not necessarily lead to mass unemployment but rather a shift in the types of jobs available.' Automation will:",
+            "options": {
+                "a": "Eliminate all jobs",
+                "b": "Change job types",
+                "c": "Have no effect",
+                "d": "Only affect manual labor"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The data suggests a non-linear relationship between the two variables.' The relationship is:",
+            "options": {
+                "a": "Directly proportional",
+                "b": "Not a simple straight line",
+                "c": "Inversely proportional",
+                "d": "Non-existent"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The speaker emphasizes that anecdotal evidence should not be conflated with empirical data.' Anecdotal evidence vs empirical data:",
+            "options": {
+                "a": "They are the same",
+                "b": "They should be treated differently",
+                "c": "Both are unreliable",
+                "d": "Anecdotal is more reliable"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The paradigm shift in our understanding of genetics was catalyzed by the Human Genome Project.' The Human Genome Project caused:",
+            "options": {
+                "a": "Minor adjustments",
+                "b": "A fundamental change in understanding",
+                "c": "No impact",
+                "d": "Confusion"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "You hear: 'The flight has been delayed by two hours. New departure time is 4 PM.' Original departure was:",
+            "options": {
+                "a": "12 PM",
+                "b": "2 PM",
+                "c": "3 PM",
+                "d": "4 PM"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'The museum is free on the first Sunday of every month.' When is museum free?",
+            "options": {
+                "a": "Every Sunday",
+                "b": "First Sunday monthly",
+                "c": "Every day",
+                "d": "Never"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'Swimming pool maintenance will be carried out on Wednesday morning. The pool will reopen at 2 PM.' Pool reopens:",
+            "options": {
+                "a": "Wednesday morning",
+                "b": "Wednesday 2 PM",
+                "c": "Thursday",
+                "d": "Next week"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "You hear: 'The parking fee is two pounds per hour with a maximum daily charge of twelve pounds.' Maximum daily parking cost:",
+            "options": {
+                "a": "£2",
+                "b": "£10",
+                "c": "£12",
+                "d": "£20"
+            },
+            "correct": "c",
+            "difficulty": 2
+        },
+        {
+            "text": "You hear: 'The prevailing consensus among climatologists is that human activity is the primary driver of current warming trends.' Scientists mostly agree that:",
+            "options": {
+                "a": "Warming is natural only",
+                "b": "Humans are the main cause of warming",
+                "c": "There is no warming",
+                "d": "It cannot be determined"
+            },
+            "correct": "b",
+            "difficulty": 3
+        }
+    ]
+}

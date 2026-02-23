@@ -1,0 +1,559 @@
+{
+    "subject": {
+        "name": "Speaking",
+        "emoji": "🗣️",
+        "description": "IELTS Speaking section"
+    },
+    "questions": [
+        {
+            "text": "Which phrase is most appropriate to begin an IELTS Speaking Part 1 answer about your hometown?",
+            "options": {
+                "a": "I don't know",
+                "b": "I come from a small city called...",
+                "c": "My hometown is boring",
+                "d": "I hate my city"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "How should you answer 'Do you like reading?' in IELTS Speaking?",
+            "options": {
+                "a": "Yes",
+                "b": "No, I don't",
+                "c": "Yes, I enjoy reading, especially novels because...",
+                "d": "Reading is okay"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "What does 'Can you tell me about your family?' expect?",
+            "options": {
+                "a": "Just names",
+                "b": "A brief description of family members",
+                "c": "Your address",
+                "d": "Your phone number"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Which linking word shows contrast?",
+            "options": {
+                "a": "Moreover",
+                "b": "However",
+                "c": "Furthermore",
+                "d": "Additionally"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "What's the best way to say you agree with something?",
+            "options": {
+                "a": "Yeah",
+                "b": "I suppose so",
+                "c": "I completely agree because...",
+                "d": "Maybe"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "How do you paraphrase 'very happy'?",
+            "options": {
+                "a": "Sad",
+                "b": "Thrilled",
+                "c": "Angry",
+                "d": "Tired"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Which is a good opening for describing a person?",
+            "options": {
+                "a": "He is a person",
+                "b": "I'd like to talk about my friend who is...",
+                "c": "Someone exists",
+                "d": "A human being"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "What does 'elaborate' mean in IELTS Speaking?",
+            "options": {
+                "a": "Be brief",
+                "b": "Give more detail",
+                "c": "Stop talking",
+                "d": "Change topic"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Which expression means 'in my opinion'?",
+            "options": {
+                "a": "I think",
+                "b": "From my perspective",
+                "c": "As far as I'm concerned",
+                "d": "All of the above"
+            },
+            "correct": "d",
+            "difficulty": 1
+        },
+        {
+            "text": "What should you do if you don't understand a Part 3 question?",
+            "options": {
+                "a": "Stay silent",
+                "b": "Say 'pass'",
+                "c": "Ask the examiner to rephrase",
+                "d": "Make up an answer"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "Which is a higher-level way to say 'I think'?",
+            "options": {
+                "a": "I reckon",
+                "b": "I believe",
+                "c": "From my standpoint",
+                "d": "All of these"
+            },
+            "correct": "d",
+            "difficulty": 2
+        },
+        {
+            "text": "What's a good way to give a balanced opinion?",
+            "options": {
+                "a": "I love it",
+                "b": "While there are benefits, there are also drawbacks",
+                "c": "I hate it",
+                "d": "No comment"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Which phrase adds an example to your speaking?",
+            "options": {
+                "a": "In conclusion",
+                "b": "For instance",
+                "c": "On the other hand",
+                "d": "Therefore"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "How should you structure a Part 2 cue card answer?",
+            "options": {
+                "a": "Random thoughts",
+                "b": "Introduction, main points, conclusion",
+                "c": "Just one sentence",
+                "d": "Only examples"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Which phrase shows cause and effect?",
+            "options": {
+                "a": "However",
+                "b": "As a result",
+                "c": "But",
+                "d": "Although"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "'To be honest' is used in IELTS Speaking to:",
+            "options": {
+                "a": "Lie",
+                "b": "Give a sincere, possibly unexpected opinion",
+                "c": "End the conversation",
+                "d": "Change the subject"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Which is better for IELTS Speaking: 'big problem' or...?",
+            "options": {
+                "a": "very big problem",
+                "b": "significant issue",
+                "c": "really big problem",
+                "d": "huge big problem"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "What's a good way to speculate about the future?",
+            "options": {
+                "a": "It will definitely happen",
+                "b": "I think it's likely that...",
+                "c": "Who knows",
+                "d": "I don't care"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Which sentence uses a conditional correctly?",
+            "options": {
+                "a": "If I have time, I will go",
+                "b": "If I has time, I go",
+                "c": "If I have time, I going",
+                "d": "If I having time, I went"
+            },
+            "correct": "a",
+            "difficulty": 2
+        },
+        {
+            "text": "When comparing two things, which structure is correct?",
+            "options": {
+                "a": "More cheap than",
+                "b": "Cheaper than",
+                "c": "Most cheap than",
+                "d": "Cheapest than"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Which complex sentence structure would score higher in IELTS?",
+            "options": {
+                "a": "I like food. Food is good",
+                "b": "Having considered the various factors, I believe that...",
+                "c": "Food good. Me like",
+                "d": "I eat food because hungry"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Which idiom means 'very rarely'?",
+            "options": {
+                "a": "Once in a blue moon",
+                "b": "Every day",
+                "c": "Most of the time",
+                "d": "Now and then"
+            },
+            "correct": "a",
+            "difficulty": 3
+        },
+        {
+            "text": "How should you discuss abstract topics in Part 3?",
+            "options": {
+                "a": "Give one-word answers",
+                "b": "Use examples, explanations, and varied vocabulary",
+                "c": "Say 'I don't know'",
+                "d": "Repeat the question"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Which discourse marker indicates a conclusion?",
+            "options": {
+                "a": "First of all",
+                "b": "In addition",
+                "c": "To sum up",
+                "d": "For example"
+            },
+            "correct": "c",
+            "difficulty": 3
+        },
+        {
+            "text": "'Playing devil's advocate' means:",
+            "options": {
+                "a": "Being evil",
+                "b": "Arguing the opposite side for discussion",
+                "c": "Playing a game",
+                "d": "Being religious"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Which phrase shows you're acknowledging a counter-argument?",
+            "options": {
+                "a": "You're wrong",
+                "b": "While I understand that viewpoint, I believe...",
+                "c": "That's stupid",
+                "d": "I disagree completely"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "What does 'a double-edged sword' mean?",
+            "options": {
+                "a": "Something dangerous",
+                "b": "Something with both advantages and disadvantages",
+                "c": "A weapon",
+                "d": "Something positive"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Which phrase introduces a hypothetical situation?",
+            "options": {
+                "a": "Yesterday I went",
+                "b": "If I were to imagine a scenario where...",
+                "c": "I always do",
+                "d": "Tomorrow I will"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "What does 'food for thought' mean?",
+            "options": {
+                "a": "Actual food",
+                "b": "Something worth thinking about",
+                "c": "A recipe",
+                "d": "Hunger"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Which is the most sophisticated way to express uncertainty?",
+            "options": {
+                "a": "I dunno",
+                "b": "It remains to be seen whether...",
+                "c": "Maybe",
+                "d": "Perhaps"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "What's the best way to describe your job in IELTS?",
+            "options": {
+                "a": "I work",
+                "b": "I'm currently employed as a... and my responsibilities include...",
+                "c": "I have a job",
+                "d": "Work is work"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Which phrase expresses preference?",
+            "options": {
+                "a": "I'd rather... than...",
+                "b": "I not like",
+                "c": "Maybe both",
+                "d": "Whatever"
+            },
+            "correct": "a",
+            "difficulty": 1
+        },
+        {
+            "text": "How should you answer 'What do you do in your free time'?",
+            "options": {
+                "a": "Nothing",
+                "b": "In my spare time, I enjoy... because...",
+                "c": "Sleep",
+                "d": "I don't have free time"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Which word means 'very interesting'?",
+            "options": {
+                "a": "Boring",
+                "b": "Fascinating",
+                "c": "Average",
+                "d": "Simple"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "What does 'to broaden one's horizons' mean?",
+            "options": {
+                "a": "To watch sunrise",
+                "b": "To expand knowledge and experience",
+                "c": "To travel far",
+                "d": "To read maps"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "'It goes without saying' means:",
+            "options": {
+                "a": "Don't say anything",
+                "b": "It's obvious and doesn't need to be stated",
+                "c": "Keep quiet",
+                "d": "Speak louder"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Which phrase adds emphasis to your point?",
+            "options": {
+                "a": "Maybe",
+                "b": "What's more important is that...",
+                "c": "I guess",
+                "d": "Sort of"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "In Part 2, how long should you speak?",
+            "options": {
+                "a": "30 seconds",
+                "b": "1-2 minutes",
+                "c": "5 minutes",
+                "d": "10 minutes"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "'Off the top of my head' means:",
+            "options": {
+                "a": "From my hair",
+                "b": "Without thinking deeply, immediately",
+                "c": "After research",
+                "d": "Never"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Which is a good way to compare past and present?",
+            "options": {
+                "a": "Before bad, now good",
+                "b": "Compared to a decade ago, things have significantly...",
+                "c": "Old times bad",
+                "d": "Same same"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "'To turn a blind eye' means:",
+            "options": {
+                "a": "To be blind",
+                "b": "To intentionally ignore something",
+                "c": "To see clearly",
+                "d": "To wear glasses"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Which academic phrase means 'more and more'?",
+            "options": {
+                "a": "Lots more",
+                "b": "Increasingly",
+                "c": "Very much",
+                "d": "Tons of"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "'Catch-22' means:",
+            "options": {
+                "a": "A basketball move",
+                "b": "A no-win situation",
+                "c": "A lucky break",
+                "d": "A simple solution"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Which is the most advanced way to give an opinion?",
+            "options": {
+                "a": "I think so",
+                "b": "I'm of the firm conviction that...",
+                "c": "I guess",
+                "d": "Yeah probably"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "'The bottom line is' means:",
+            "options": {
+                "a": "The last line",
+                "b": "The most important point is",
+                "c": "The price",
+                "d": "The floor"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Which collocation is correct?",
+            "options": {
+                "a": "Make a decision",
+                "b": "Do a decision",
+                "c": "Take a decision",
+                "d": "Both A and C"
+            },
+            "correct": "d",
+            "difficulty": 2
+        },
+        {
+            "text": "'To shed light on' means:",
+            "options": {
+                "a": "To turn on a lamp",
+                "b": "To clarify or explain",
+                "c": "To make dark",
+                "d": "To hide"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "How do you express strong disagreement politely?",
+            "options": {
+                "a": "You're wrong!",
+                "b": "I see your point, but I respectfully disagree because...",
+                "c": "No way!",
+                "d": "That's nonsense"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "'The tip of the iceberg' means:",
+            "options": {
+                "a": "A cold place",
+                "b": "Only a small visible part of a larger issue",
+                "c": "The top of a mountain",
+                "d": "Everything"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Which transition shows you're adding a new point?",
+            "options": {
+                "a": "In contrast",
+                "b": "Furthermore",
+                "c": "However",
+                "d": "On the other hand"
+            },
+            "correct": "b",
+            "difficulty": 1
+        }
+    ]
+}

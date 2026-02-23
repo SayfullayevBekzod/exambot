@@ -1,0 +1,559 @@
+{
+    "subject": {
+        "name": "Reading",
+        "emoji": "📖",
+        "description": "IELTS Reading section"
+    },
+    "questions": [
+        {
+            "text": "Read the passage: 'The Amazon rainforest produces approximately 20% of the world's oxygen.' What percentage of the world's oxygen does the Amazon produce?",
+            "options": {
+                "a": "10%",
+                "b": "15%",
+                "c": "20%",
+                "d": "25%"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'Scientists discovered that dolphins sleep with one eye open.' Why do dolphins sleep this way?",
+            "options": {
+                "a": "To watch for food",
+                "b": "To stay alert for predators",
+                "c": "Because of brain structure",
+                "d": "To communicate"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'The Great Wall of China is not visible from space with the naked eye, contrary to popular belief.' This statement:",
+            "options": {
+                "a": "Confirms the myth",
+                "b": "Debunks a common misconception",
+                "c": "Supports the original claim",
+                "d": "Is irrelevant"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'Honey never spoils. Archaeologists have found 3000-year-old honey in Egyptian tombs that was still edible.' The word 'edible' means:",
+            "options": {
+                "a": "Valuable",
+                "b": "Beautiful",
+                "c": "Safe to eat",
+                "d": "Ancient"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'The speed of light is approximately 299,792 km per second.' Which measurement is closest?",
+            "options": {
+                "a": "200,000 km/s",
+                "b": "300,000 km/s",
+                "c": "400,000 km/s",
+                "d": "500,000 km/s"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'Water covers about 71% of the Earth's surface, but only 2.5% is fresh water.' What can be inferred?",
+            "options": {
+                "a": "Most water is drinkable",
+                "b": "Fresh water is abundant",
+                "c": "Most of Earth's water is saltwater",
+                "d": "Water is decreasing"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'The human brain uses about 20% of the body's total energy.' This suggests the brain is:",
+            "options": {
+                "a": "Energy efficient",
+                "b": "Energy intensive",
+                "c": "Not important",
+                "d": "Self-sufficient"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'Octopuses have three hearts and blue blood.' How many hearts does an octopus have?",
+            "options": {
+                "a": "One",
+                "b": "Two",
+                "c": "Three",
+                "d": "Four"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'Mount Everest grows approximately 4mm taller each year due to tectonic activity.' The cause of this growth is:",
+            "options": {
+                "a": "Volcanic eruption",
+                "b": "Erosion",
+                "c": "Tectonic activity",
+                "d": "Climate change"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'A group of flamingos is called a 'flamboyance'.' The collective noun for flamingos is:",
+            "options": {
+                "a": "A flock",
+                "b": "A flamboyance",
+                "c": "A flight",
+                "d": "A colony"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'The population growth in urban areas has led to significant environmental challenges, including air pollution and waste management issues.' The main topic is:",
+            "options": {
+                "a": "Rural development",
+                "b": "Environmental impact of urbanization",
+                "c": "Population decline",
+                "d": "Waste recycling"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'Despite advances in technology, many developing countries still lack access to clean water.' The word 'despite' indicates:",
+            "options": {
+                "a": "Agreement",
+                "b": "Contrast",
+                "c": "Cause",
+                "d": "Result"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'Renewable energy sources such as solar and wind power are becoming increasingly cost-effective.' The passage suggests renewable energy is:",
+            "options": {
+                "a": "Becoming more expensive",
+                "b": "Remaining stable in cost",
+                "c": "Getting cheaper",
+                "d": "Being abandoned"
+            },
+            "correct": "c",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'The Industrial Revolution marked a major turning point in history, fundamentally altering how people lived and worked.' 'Fundamentally' means:",
+            "options": {
+                "a": "Slightly",
+                "b": "Temporarily",
+                "c": "At the most basic level",
+                "d": "Superficially"
+            },
+            "correct": "c",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'Coral reefs support approximately 25% of all marine species, yet they cover less than 1% of the ocean floor.' This implies coral reefs are:",
+            "options": {
+                "a": "Unimportant",
+                "b": "Disproportionately biodiverse",
+                "c": "Too large",
+                "d": "Declining"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'Studies show that bilingual individuals often demonstrate greater cognitive flexibility.' 'Cognitive flexibility' refers to:",
+            "options": {
+                "a": "Physical strength",
+                "b": "Mental adaptability",
+                "c": "Language skills",
+                "d": "Memory capacity"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'The concept of sustainable development aims to meet present needs without compromising future generations.' The key principle is:",
+            "options": {
+                "a": "Maximizing current profits",
+                "b": "Ignoring environmental costs",
+                "c": "Balancing present and future needs",
+                "d": "Reducing all development"
+            },
+            "correct": "c",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'Artificial intelligence has the potential to revolutionize healthcare through early disease detection and personalized treatment plans.' AI in healthcare could:",
+            "options": {
+                "a": "Replace all doctors",
+                "b": "Detect diseases earlier",
+                "c": "Increase costs",
+                "d": "Reduce accuracy"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'The Mediterranean diet, rich in olive oil, fish, and vegetables, has been associated with lower rates of heart disease.' The diet's benefit is:",
+            "options": {
+                "a": "Weight gain",
+                "b": "Reduced heart disease risk",
+                "c": "Increased cholesterol",
+                "d": "No effect"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'Migration patterns of birds are influenced by changes in daylight hours rather than temperature alone.' Bird migration is primarily triggered by:",
+            "options": {
+                "a": "Temperature",
+                "b": "Food availability",
+                "c": "Daylight changes",
+                "d": "Wind patterns"
+            },
+            "correct": "c",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'The author argues that while globalization has increased economic interdependence, it has also widened the gap between rich and poor nations.' The author's stance on globalization is:",
+            "options": {
+                "a": "Entirely positive",
+                "b": "Entirely negative",
+                "c": "Nuanced with both benefits and drawbacks",
+                "d": "Indifferent"
+            },
+            "correct": "c",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'Epigenetics challenges the traditional view of DNA as an unchangeable blueprint, suggesting environmental factors can alter gene expression.' Epigenetics shows that:",
+            "options": {
+                "a": "DNA cannot change",
+                "b": "Environment affects gene expression",
+                "c": "Genes are irrelevant",
+                "d": "Only genetics matter"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'The paradox of choice theory suggests that having too many options can lead to anxiety and decision paralysis rather than satisfaction.' The theory implies:",
+            "options": {
+                "a": "More choices always lead to happiness",
+                "b": "Fewer options reduce quality",
+                "c": "Excessive choices can be counterproductive",
+                "d": "Choice has no impact"
+            },
+            "correct": "c",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'Quantum computing leverages quantum mechanical phenomena such as superposition and entanglement to process information exponentially faster.' The key advantage of quantum computing is:",
+            "options": {
+                "a": "Lower cost",
+                "b": "Simpler design",
+                "c": "Exponentially faster processing",
+                "d": "Smaller size"
+            },
+            "correct": "c",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'The passage discusses how confirmation bias leads individuals to seek information that supports their existing beliefs while dismissing contradictory evidence.' Confirmation bias causes people to:",
+            "options": {
+                "a": "Evaluate evidence objectively",
+                "b": "Welcome opposing viewpoints",
+                "c": "Favor information confirming their beliefs",
+                "d": "Change their minds frequently"
+            },
+            "correct": "c",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'Neuroplasticity — the brain's ability to reorganize itself by forming new neural connections — challenges the notion that brain development ceases after a certain age.' Neuroplasticity means:",
+            "options": {
+                "a": "The brain stops developing early",
+                "b": "The brain can continue to adapt",
+                "c": "Neural connections are fixed",
+                "d": "Learning is impossible in adulthood"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'The precautionary principle states that if an action raises threats of harm, precautionary measures should be taken even if causal relationships are not fully established.' This principle advocates:",
+            "options": {
+                "a": "Waiting for full proof before acting",
+                "b": "Taking preventive action despite uncertainty",
+                "c": "Ignoring potential risks",
+                "d": "Accepting all risks"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'Gentrification often results in the displacement of long-term residents who can no longer afford rising property values in their neighborhoods.' The negative effect of gentrification is:",
+            "options": {
+                "a": "Improved infrastructure",
+                "b": "Displacement of original residents",
+                "c": "Increased cultural diversity",
+                "d": "Lower crime rates"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'The Sapir-Whorf hypothesis proposes that the language we speak influences how we perceive and conceptualize the world.' This hypothesis links:",
+            "options": {
+                "a": "Culture and food",
+                "b": "Language and thought",
+                "c": "Geography and language",
+                "d": "Education and success"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'Longitudinal studies provide more reliable data than cross-sectional studies because they track the same subjects over extended periods.' The advantage of longitudinal studies is:",
+            "options": {
+                "a": "They are cheaper",
+                "b": "They are faster",
+                "c": "They track changes over time in the same group",
+                "d": "They use larger samples"
+            },
+            "correct": "c",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'The sun is the primary source of energy for life on Earth.' What is the Earth's main energy source?",
+            "options": {
+                "a": "Moon",
+                "b": "Stars",
+                "c": "Sun",
+                "d": "Wind"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'Plastic pollution in oceans threatens marine life and ecosystems worldwide.' The main threat discussed is:",
+            "options": {
+                "a": "Air pollution",
+                "b": "Plastic pollution",
+                "c": "Noise pollution",
+                "d": "Light pollution"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'The invention of the printing press by Gutenberg revolutionized the spread of knowledge.' Who invented the printing press?",
+            "options": {
+                "a": "Edison",
+                "b": "Newton",
+                "c": "Gutenberg",
+                "d": "Da Vinci"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'Climate change refers to long-term shifts in global temperatures and weather patterns.' Climate change involves:",
+            "options": {
+                "a": "Short-term weather",
+                "b": "Long-term temperature shifts",
+                "c": "Only rainfall changes",
+                "d": "Seasonal variations"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'Photosynthesis is the process by which plants convert sunlight into chemical energy.' Plants convert sunlight into:",
+            "options": {
+                "a": "Heat energy",
+                "b": "Nuclear energy",
+                "c": "Chemical energy",
+                "d": "Electrical energy"
+            },
+            "correct": "c",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'Deforestation contributes to climate change by releasing stored carbon dioxide into the atmosphere.' Deforestation affects climate by:",
+            "options": {
+                "a": "Absorbing CO2",
+                "b": "Releasing stored CO2",
+                "c": "Producing oxygen",
+                "d": "Cooling the atmosphere"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'The concept of emotional intelligence encompasses the ability to recognize, understand, and manage one's own emotions.' Emotional intelligence includes:",
+            "options": {
+                "a": "Only academic skills",
+                "b": "Managing one's emotions",
+                "c": "Physical fitness",
+                "d": "Technical abilities"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'Archaeological evidence suggests that ancient civilizations developed sophisticated irrigation systems for agriculture.' Ancient civilizations used:",
+            "options": {
+                "a": "Modern pumps",
+                "b": "Irrigation systems",
+                "c": "Chemical fertilizers",
+                "d": "Greenhouses"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'The placebo effect demonstrates the powerful connection between mind and body in healing processes.' The placebo effect shows:",
+            "options": {
+                "a": "Medicine is unnecessary",
+                "b": "Mind-body connection in healing",
+                "c": "All treatments work",
+                "d": "Psychology is irrelevant"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'Biodiversity loss accelerates when habitat destruction coincides with climate change and invasive species introduction.' Biodiversity loss is caused by:",
+            "options": {
+                "a": "Only climate change",
+                "b": "Multiple interacting factors",
+                "c": "Only habitat loss",
+                "d": "Natural selection alone"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'The anthropocene epoch is characterized by significant human impact on Earth's geology and ecosystems.' The anthropocene is defined by:",
+            "options": {
+                "a": "Natural geological processes",
+                "b": "Human impact on Earth systems",
+                "c": "Ice age patterns",
+                "d": "Volcanic activity"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'Social media algorithms create echo chambers that reinforce existing beliefs and limit exposure to diverse perspectives.' Echo chambers:",
+            "options": {
+                "a": "Increase diverse viewpoints",
+                "b": "Reinforce existing beliefs",
+                "c": "Promote critical thinking",
+                "d": "Have no effect"
+            },
+            "correct": "b",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'The circular economy model aims to eliminate waste by designing products for reuse, repair, and recycling.' The circular economy focuses on:",
+            "options": {
+                "a": "Maximizing production",
+                "b": "Increasing consumption",
+                "c": "Eliminating waste through design",
+                "d": "Linear production"
+            },
+            "correct": "c",
+            "difficulty": 3
+        },
+        {
+            "text": "Read: 'Microplastics have been found in the deepest ocean trenches and on the highest mountain peaks.' This shows that:",
+            "options": {
+                "a": "Plastic pollution is limited",
+                "b": "Microplastics are everywhere",
+                "c": "Oceans are clean",
+                "d": "Mountains filter pollution"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'The concept of universal basic income proposes giving every citizen a regular, unconditional sum of money.' UBI provides:",
+            "options": {
+                "a": "Conditional payments",
+                "b": "Employment-based income",
+                "c": "Unconditional regular payments",
+                "d": "One-time grants"
+            },
+            "correct": "c",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'Caffeine blocks adenosine receptors in the brain, which normally promote sleepiness.' Caffeine keeps you awake by:",
+            "options": {
+                "a": "Adding energy",
+                "b": "Blocking sleep-promoting chemicals",
+                "c": "Increasing blood sugar",
+                "d": "Stimulating muscles"
+            },
+            "correct": "b",
+            "difficulty": 2
+        },
+        {
+            "text": "Read: 'The greenhouse effect is a natural process that warms Earth's surface, but human activities have intensified it.' Human impact on the greenhouse effect is:",
+            "options": {
+                "a": "Decreasing it",
+                "b": "Intensifying it",
+                "c": "Eliminating it",
+                "d": "Having no effect"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'Antibiotics are effective against bacteria but not viruses.' Antibiotics work against:",
+            "options": {
+                "a": "Viruses only",
+                "b": "Bacteria only",
+                "c": "Both equally",
+                "d": "Neither"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'The Rosetta Stone was the key to deciphering Egyptian hieroglyphics.' The Rosetta Stone helped decode:",
+            "options": {
+                "a": "Greek alphabet",
+                "b": "Egyptian hieroglyphics",
+                "c": "Roman numerals",
+                "d": "Chinese characters"
+            },
+            "correct": "b",
+            "difficulty": 1
+        },
+        {
+            "text": "Read: 'The theory of plate tectonics explains how continents move over geological time scales.' Plate tectonics explains:",
+            "options": {
+                "a": "Weather patterns",
+                "b": "Continental movement",
+                "c": "Ocean currents",
+                "d": "Star formation"
+            },
+            "correct": "b",
+            "difficulty": 2
+        }
+    ]
+}

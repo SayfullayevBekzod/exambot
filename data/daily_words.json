@@ -1,0 +1,184 @@
+{
+    "words": [
+        {
+            "word": "Abundant",
+            "meaning": "Juda ko'p, mo'l-ko'l",
+            "example": "The region has abundant natural resources.",
+            "synonym": "plentiful, ample"
+        },
+        {
+            "word": "Coherent",
+            "meaning": "Mantiqiy, bir-biriga bog'liq",
+            "example": "She gave a coherent explanation of the theory.",
+            "synonym": "logical, consistent"
+        },
+        {
+            "word": "Deteriorate",
+            "meaning": "Yomonlashmoq",
+            "example": "Air quality continues to deteriorate in large cities.",
+            "synonym": "worsen, decline"
+        },
+        {
+            "word": "Elaborate",
+            "meaning": "Batafsil, murakkab",
+            "example": "Could you elaborate on your proposal?",
+            "synonym": "detailed, complex"
+        },
+        {
+            "word": "Fluctuate",
+            "meaning": "O'zgarib turmoq",
+            "example": "Prices fluctuate depending on demand.",
+            "synonym": "vary, change"
+        },
+        {
+            "word": "Inevitable",
+            "meaning": "Muqarrar, oldini olish mumkin bo'lmagan",
+            "example": "Change is inevitable in any growing organization.",
+            "synonym": "unavoidable, certain"
+        },
+        {
+            "word": "Mitigate",
+            "meaning": "Yengillashtirmoq",
+            "example": "Trees help mitigate the effects of pollution.",
+            "synonym": "reduce, alleviate"
+        },
+        {
+            "word": "Pragmatic",
+            "meaning": "Amaliy, hayotiy",
+            "example": "We need a pragmatic approach to this problem.",
+            "synonym": "practical, realistic"
+        },
+        {
+            "word": "Resilient",
+            "meaning": "Chidamli, tez tiklanuvchi",
+            "example": "Children are often more resilient than adults.",
+            "synonym": "tough, adaptable"
+        },
+        {
+            "word": "Subsequent",
+            "meaning": "Keyingi, navbatdagi",
+            "example": "Subsequent research confirmed the findings.",
+            "synonym": "following, later"
+        },
+        {
+            "word": "Ubiquitous",
+            "meaning": "Hamma joyda mavjud",
+            "example": "Smartphones have become ubiquitous in modern life.",
+            "synonym": "everywhere, omnipresent"
+        },
+        {
+            "word": "Validate",
+            "meaning": "Tasdiqlash",
+            "example": "Scientists need to validate their findings.",
+            "synonym": "confirm, verify"
+        },
+        {
+            "word": "Ambiguous",
+            "meaning": "Noaniq, ikki xil tushunish mumkin",
+            "example": "The contract language was ambiguous.",
+            "synonym": "unclear, vague"
+        },
+        {
+            "word": "Comprehensive",
+            "meaning": "Har tomonlama, to'liq",
+            "example": "We need a comprehensive review of the policy.",
+            "synonym": "thorough, complete"
+        },
+        {
+            "word": "Detrimental",
+            "meaning": "Zararli",
+            "example": "Smoking is detrimental to your health.",
+            "synonym": "harmful, damaging"
+        },
+        {
+            "word": "Empirical",
+            "meaning": "Tajribaga asoslangan",
+            "example": "The theory is supported by empirical evidence.",
+            "synonym": "experimental, observed"
+        },
+        {
+            "word": "Feasible",
+            "meaning": "Amalga oshirilishi mumkin",
+            "example": "Is this plan financially feasible?",
+            "synonym": "possible, achievable"
+        },
+        {
+            "word": "Hypothesis",
+            "meaning": "Faraziya, taxmin",
+            "example": "The scientist tested her hypothesis.",
+            "synonym": "theory, assumption"
+        },
+        {
+            "word": "Impartial",
+            "meaning": "Xolis, tarafsiz",
+            "example": "A judge must be impartial.",
+            "synonym": "neutral, unbiased"
+        },
+        {
+            "word": "Juxtapose",
+            "meaning": "Yonma-yon qo'ymoq (solishtirish uchun)",
+            "example": "The author juxtaposes rural and urban lifestyles.",
+            "synonym": "compare, contrast"
+        },
+        {
+            "word": "Paradigm",
+            "meaning": "Namuna, model",
+            "example": "The discovery led to a paradigm shift in science.",
+            "synonym": "model, pattern"
+        },
+        {
+            "word": "Scrutinize",
+            "meaning": "Diqqat bilan ko'rib chiqmoq",
+            "example": "Experts scrutinized the financial reports.",
+            "synonym": "examine, inspect"
+        },
+        {
+            "word": "Tangible",
+            "meaning": "Aniq, ko'rinadigan, ushlanadigan",
+            "example": "We need tangible results, not just promises.",
+            "synonym": "concrete, real"
+        },
+        {
+            "word": "Unprecedented",
+            "meaning": "Misli ko'rilmagan",
+            "example": "The pandemic caused unprecedented disruption.",
+            "synonym": "unparalleled, unique"
+        },
+        {
+            "word": "Volatile",
+            "meaning": "Tez o'zgaruvchan, beqaror",
+            "example": "The stock market has been volatile recently.",
+            "synonym": "unstable, unpredictable"
+        },
+        {
+            "word": "Ameliorate",
+            "meaning": "Yaxshilamoq",
+            "example": "Steps were taken to ameliorate working conditions.",
+            "synonym": "improve, enhance"
+        },
+        {
+            "word": "Benchmark",
+            "meaning": "Standart, o'lchov",
+            "example": "This score serves as a benchmark for future tests.",
+            "synonym": "standard, reference"
+        },
+        {
+            "word": "Consensus",
+            "meaning": "Umumiy kelishuv",
+            "example": "There is a consensus among experts on this issue.",
+            "synonym": "agreement, accord"
+        },
+        {
+            "word": "Disparity",
+            "meaning": "Farq, tafovut",
+            "example": "There is a huge income disparity in the country.",
+            "synonym": "difference, gap"
+        },
+        {
+            "word": "Exacerbate",
+            "meaning": "Yomonlashtirmoq",
+            "example": "Pollution exacerbates respiratory problems.",
+            "synonym": "worsen, aggravate"
+        }
+    ]
+}
