@@ -10,8 +10,15 @@ BOT_TOKEN = os.getenv("BOT_TOKEN", "")
 CLICK_PROVIDER_TOKEN = os.getenv("CLICK_PROVIDER_TOKEN", "")
 
 # Database
-DB_PATH = os.path.join(os.path.dirname(__file__), "exam_bot.db")
-DB_URL = f"sqlite:///{DB_PATH}"
+DATABASE_URL = os.getenv("DATABASE_URL")
+if DATABASE_URL:
+    # SQLAlchemy requires postgresql:// instead of postgres:// if copied from some providers
+    if DATABASE_URL.startswith("postgres://"):
+        DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+    DB_URL = DATABASE_URL
+else:
+    DB_PATH = os.path.join(os.path.dirname(__file__), "exam_bot.db")
+    DB_URL = f"sqlite:///{DB_PATH}"
 
 # Admin foydalanuvchilar (Telegram user ID)
 ADMIN_IDS = [int(x) for x in os.getenv("ADMIN_IDS", "").split(",") if x.strip()]

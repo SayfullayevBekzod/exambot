@@ -8,3 +8,4 @@ flask
 flask-cors
 SpeechRecognition
 pydub
+psycopg2-binary
