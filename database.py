@@ -22,7 +22,7 @@ class Subject(Base):
 class Question(Base):
     __tablename__ = "questions"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    subject_id = Column(Integer, ForeignKey("subjects.id"), nullable=False)
+    subject_id = Column(Integer, ForeignKey("subjects.id"), nullable=False, index=True)
     text = Column(Text, nullable=False)
     text_uz = Column(Text, default="")  # O'zbek tarjimasi
     option_a = Column(String(500), nullable=False)
@@ -43,7 +43,7 @@ class UserResult(Base):
     user_id = Column(Integer, nullable=False, index=True)
     username = Column(String(100), default="")
     full_name = Column(String(200), default="")
-    subject_id = Column(Integer, ForeignKey("subjects.id"), nullable=False)
+    subject_id = Column(Integer, ForeignKey("subjects.id"), nullable=False, index=True)
     score = Column(Integer, nullable=False, default=0)
     total = Column(Integer, nullable=False, default=0)
     percentage = Column(Float, nullable=False, default=0.0)
@@ -146,7 +146,7 @@ class PremiumSubscription(Base):
     payment_id = Column(String(100), default="")  # Telegram payment charge ID
     provider_payment_id = Column(String(100), default="")  # Click payment ID
     start_date = Column(DateTime, default=datetime.utcnow)
-    end_date = Column(DateTime, nullable=False)
+    end_date = Column(DateTime, nullable=False, index=True)
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
 

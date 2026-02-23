@@ -91,6 +91,18 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_text_import(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """JSON matn sifatida yuborilganda"""
+    # Speaking sessiya bo'lsa — speaking javobni qabul qilish
+    from handlers.speaking import handle_speaking_text
+    speaking_handled = await handle_speaking_text(update, context)
+    if speaking_handled:
+        return
+
+    # Premium berish/olish (admin)
+    from handlers.payment import handle_admin_text
+    admin_text_handled = await handle_admin_text(update, context)
+    if admin_text_handled:
+        return
+
     if not is_admin(update.effective_user.id):
         return
 

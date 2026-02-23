@@ -3,9 +3,10 @@ import os
 import json
 import logging
 
+from telegram import Update
 from telegram.ext import (
     ApplicationBuilder, CommandHandler, CallbackQueryHandler, MessageHandler,
-    PreCheckoutQueryHandler, filters,
+    PreCheckoutQueryHandler, filters, ContextTypes, PicklePersistence,
 )
 
 from config import BOT_TOKEN
@@ -24,6 +25,11 @@ from handlers.challenge import challenge_command
 from handlers.audio import audio_test_command
 from handlers.certificate import certificate_command
 from handlers.spaced import spaced_command
+from handlers.speaking import (
+    speaking_command, speak_part1_callback, speak_p1_topic_callback,
+    speak_part2_callback, speak_part3_callback, speak_random_callback,
+    speak_back_callback, handle_speaking_voice, handle_speaking_text,
+)
 from handlers.flashcards import (
     flashcards_command, load_defaults_callback, study_flashcard_callback,
     reveal_flashcard_callback, flashcard_response_callback, flashcard_stats_callback,
@@ -35,12 +41,52 @@ from handlers.extras import (
     miniapp_command,
 )
 from handlers.payment import (
-    premium_command, buy_premium_callback, precheckout_handler,
-    successful_payment_handler, go_premium_callback,
+    premium_command, buy_premium_callback, go_premium_callback,
+    handle_premium_receipt, admin_approve_callback, admin_reject_callback,
+    admin_command, admin_give_premium_callback, admin_revoke_premium_callback,
+    admin_set_premium_callback, admin_users_callback, admin_full_stats_callback,
+    admin_back_callback,
 )
 
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Kutilmagan xatolarni boshqarish va adminga xabar berish"""
+    from config import ADMIN_IDS
+    import traceback
+    
+    logger.error("Xato yuz berdi:", exc_info=context.error)
+    
+    # Traceback
+    tb_list = traceback.format_exception(None, context.error, context.error.__traceback__)
+    tb_string = "".join(tb_list)
+    
+    # Adminga xabar
+    message = (
+        f"⚠️ <b>Kritik Xato!</b>\n\n"
+        f"Update: <code>{update}</code>\n\n"
+        f"Xato matni: <code>{str(context.error)}</code>\n\n"
+        f"Tafsilotlar:\n<pre>{tb_string[:3000]}</pre>"
+    )
+    
+    for admin_id in ADMIN_IDS:
+        try:
+            await context.bot.send_message(chat_id=admin_id, text=message, parse_mode="HTML")
+        except Exception:
+            pass
+
+    # Foydalanuvchiga xabar
+    if isinstance(update, Update) and update.effective_message:
+        try:
+            await update.effective_message.reply_text(
+                "❌ <b>Xatolik yuz berdi!</b>\n\n"
+                "Texnik nosozlik tufayli buyruqni bajarib bo'lmadi.\n"
+                "Adminlar xabardor qilindi. Iltimos, bir ozdan keyin qayta urinib ko'ring.",
+                parse_mode="HTML"
+            )
+        except Exception:
+            pass
 
 
 def load_initial_data():
@@ -83,7 +129,10 @@ def main():
     init_db()
     load_initial_data()
 
-    app = ApplicationBuilder().token(BOT_TOKEN).build()
+    # Persistence - sessiyalarni saqlash
+    persistence = PicklePersistence(filepath="persistence.pickle")
+
+    app = ApplicationBuilder().token(BOT_TOKEN).persistence(persistence).build()
 
     # === Buyruqlar ===
     commands = [
@@ -96,15 +145,15 @@ def main():
         ("takrorlash", spaced_command), ("flashcards", flashcards_command),
         ("reja", studyplan_command), ("speed", speed_command),
         ("tarjima", translation_command), ("premium", premium_command),
-        ("webapp", miniapp_command),
+        ("webapp", miniapp_command), ("speaking", speaking_command),
+        ("admin", admin_command),
         ("import", import_command), ("admin_stats", admin_stats_command),
     ]
     for cmd, handler in commands:
         app.add_handler(CommandHandler(cmd, handler))
 
-    # === To'lov handlerlari (Click) ===
-    app.add_handler(PreCheckoutQueryHandler(precheckout_handler))
-    app.add_handler(MessageHandler(filters.SUCCESSFUL_PAYMENT, successful_payment_handler))
+    # === To'lov handlerlari (Manual Receipt) ===
+    app.add_handler(MessageHandler(filters.PHOTO, handle_premium_receipt))
 
     # === Callback querylar ===
     callbacks = [
@@ -142,6 +191,22 @@ def main():
         (r"^speed_restart$", speed_start_callback),
         # Translation
         (r"^translate_(on|off)$", translation_toggle_callback),
+        # Speaking Practice
+        (r"^speak_part1$", speak_part1_callback),
+        (r"^speak_p1_\w+$", speak_p1_topic_callback),
+        (r"^speak_part2$", speak_part2_callback),
+        (r"^speak_part3$", speak_part3_callback),
+        (r"^speak_random$", speak_random_callback),
+        (r"^speak_back$", speak_back_callback),
+        # Manual Payment Admin Approval
+        (r"^adm_approve_", admin_approve_callback),
+        (r"^adm_reject_", admin_reject_callback),
+        (r"^adm_give_premium$", admin_give_premium_callback),
+        (r"^adm_revoke_premium$", admin_revoke_premium_callback),
+        (r"^adm_setprem_", admin_set_premium_callback),
+        (r"^adm_users$", admin_users_callback),
+        (r"^adm_full_stats$", admin_full_stats_callback),
+        (r"^adm_back$", admin_back_callback),
     ]
     for pattern, handler in callbacks:
         app.add_handler(CallbackQueryHandler(handler, pattern=pattern))
@@ -158,13 +223,19 @@ def main():
         "📊 Sertifikat": certificate_command, "👑 Premium": premium_command,
         "🌐 Tarjima": translation_command, "🔔 Eslatma": reminder_command,
         "👥 Challenge": challenge_command, "ℹ️ Yordam": help_command,
+        "🎤 Speaking": speaking_command, "⚙️ Admin": admin_command,
     }
     for text, handler in button_handlers.items():
         app.add_handler(MessageHandler(filters.Regex(f"^{text}$"), handler))
 
-    # === Fayl va matn (admin) ===
-    app.add_handler(MessageHandler(filters.Document.ALL, handle_document))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_import))
+    # === Fayl, matn va voice (Group 1 - Pastroq ustuvorlik) ===
+    # Bu guruhdagi handlerlar faqat Group 0 dagi tugmalarga mos kelmasa ishlaydi
+    app.add_handler(MessageHandler(filters.Document.ALL, handle_document), group=1)
+    app.add_handler(MessageHandler(filters.VOICE, handle_speaking_voice), group=1)
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_import), group=1)
+
+    # === Error Handler ===
+    app.add_error_handler(error_handler)
 
     # === Jobs ===
     setup_daily_jobs(app.job_queue)

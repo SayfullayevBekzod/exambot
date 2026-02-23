@@ -24,3 +24,6 @@ Thumbs.db
 
 # Gemini
 .gemini/
+
+# Bot Persistence
+persistence.pickle

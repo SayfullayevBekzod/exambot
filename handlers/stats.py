@@ -50,6 +50,9 @@ async def _build_stats_text(user_id):
         streak_text = f"🔥 {streak.current_streak} kun" if streak else "0 kun"
         longest = f"⭐ {streak.longest_streak} kun" if streak else "0 kun"
 
+        # Bo'limlarni bir marta yuklash (N+1 muammosini hal qilish)
+        all_subjects = {s.id: s for s in session.query(Subject).all()}
+
         text = (
             f"📊 <b>Mening natijalarim</b>\n\n"
             f"🎯 O'rtacha: <b>{avg_pct:.1f}%</b> (Band {band})\n"
@@ -62,12 +65,12 @@ async def _build_stats_text(user_id):
             f"📚 <b>Bo'limlar bo'yicha:</b>\n\n"
         )
 
-        # Bo'limlar bo'yicha
+        # Bo'limlar bo'yicha tahlil
         subject_stats = {}
         for r in results:
             sid = r.subject_id
             if sid not in subject_stats:
-                s = session.query(Subject).get(sid)
+                s = all_subjects.get(sid)
                 subject_stats[sid] = {
                     "name": f"{s.emoji} {s.name}" if s else "?",
                     "tests": 0,
@@ -78,7 +81,7 @@ async def _build_stats_text(user_id):
             subject_stats[sid]["total_pct"] += r.percentage
             subject_stats[sid]["best"] = max(subject_stats[sid]["best"], r.percentage)
 
-        for sid, info in subject_stats.items():
+        for sid, info in sorted(subject_stats.items()):
             avg = info["total_pct"] / info["tests"]
             text += (
                 f"  {info['name']}\n"

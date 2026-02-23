@@ -13,7 +13,8 @@ def main_menu_keyboard():
         [KeyboardButton("📅 Study Plan"), KeyboardButton("🎮 Speed Round")],
         [KeyboardButton("📊 Sertifikat"), KeyboardButton("👑 Premium")],
         [KeyboardButton("🌐 Tarjima"), KeyboardButton("🔔 Eslatma")],
-        [KeyboardButton("👥 Challenge"), KeyboardButton("ℹ️ Yordam")],
+        [KeyboardButton("👥 Challenge"), KeyboardButton("🎤 Speaking")],
+        [KeyboardButton("⚙️ Admin"), KeyboardButton("ℹ️ Yordam")],
     ]
     return ReplyKeyboardMarkup(
         keyboard,
