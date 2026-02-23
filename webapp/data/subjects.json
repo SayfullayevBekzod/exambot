@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Grammar",
+    "emoji": "✏️",
+    "description": "IELTS Grammar section",
+    "question_count": 50
+  },
+  {
+    "id": 2,
+    "name": "Listening",
+    "emoji": "🎧",
+    "description": "IELTS Listening section",
+    "question_count": 50
+  },
+  {
+    "id": 3,
+    "name": "Reading",
+    "emoji": "📖",
+    "description": "IELTS Reading section",
+    "question_count": 50
+  },
+  {
+    "id": 4,
+    "name": "Speaking",
+    "emoji": "🗣️",
+    "description": "IELTS Speaking section",
+    "question_count": 50
+  },
+  {
+    "id": 5,
+    "name": "Vocabulary",
+    "emoji": "📝",
+    "description": "IELTS Vocabulary section",
+    "question_count": 50
+  }
+]

@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "text": "She ___ to the store yesterday.",
+    "options": {
+      "a": "go",
+      "b": "goes",
+      "c": "went",
+      "d": "going"
+    },
+    "correct": "c",
+    "difficulty": 1
+  },
+  {
+    "id": 2,
+    "text": "They ___ playing football right now.",
+    "options": {
+      "a": "is",
+      "b": "are",
+      "c": "was",
+      "d": "were"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 3,
+    "text": "I have ___ finished my homework.",
+    "options": {
+      "a": "already",
+      "b": "yet",
+      "c": "still",
+      "d": "never"
+    },
+    "correct": "a",
+    "difficulty": 1
+  },
+  {
+    "id": 4,
+    "text": "___ you ever been to London?",
+    "options": {
+      "a": "Do",
+      "b": "Did",
+      "c": "Have",
+      "d": "Are"
+    },
+    "correct": "c",
+    "difficulty": 1
+  },
+  {
+    "id": 5,
+    "text": "She is ___ tallest girl in the class.",
+    "options": {
+      "a": "a",
+      "b": "an",
+      "c": "the",
+      "d": "no article"
+    },
+    "correct": "c",
+    "difficulty": 1
+  },
+  {
+    "id": 6,
+    "text": "He ___ TV when I called.",
+    "options": {
+      "a": "watches",
+      "b": "watched",
+      "c": "was watching",
+      "d": "is watching"
+    },
+    "correct": "c",
+    "difficulty": 1
+  },
+  {
+    "id": 7,
+    "text": "We ___ go to the party if it rains.",
+    "options": {
+      "a": "won't",
+      "b": "doesn't",
+      "c": "didn't",
+      "d": "aren't"
+    },
+    "correct": "a",
+    "difficulty": 1
+  },
+  {
+    "id": 8,
+    "text": "This book belongs ___ me.",
+    "options": {
+      "a": "for",
+      "b": "to",
+      "c": "at",
+      "d": "with"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 9,
+    "text": "There ___ many students in the library.",
+    "options": {
+      "a": "is",
+      "b": "are",
+      "c": "was",
+      "d": "has"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 10,
+    "text": "She speaks English very ___.",
+    "options": {
+      "a": "good",
+      "b": "well",
+      "c": "better",
+      "d": "best"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 11,
+    "text": "If I ___ you, I would study harder.",
+    "options": {
+      "a": "am",
+      "b": "was",
+      "c": "were",
+      "d": "be"
+    },
+    "correct": "c",
+    "difficulty": 2
+  },
+  {
+    "id": 12,
+    "text": "The report ___ by the manager tomorrow.",
+    "options": {
+      "a": "will review",
+      "b": "will be reviewed",
+      "c": "reviews",
+      "d": "is reviewing"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 13,
+    "text": "She asked me where I ___.",
+    "options": {
+      "a": "live",
+      "b": "lived",
+      "c": "living",
+      "d": "lives"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 14,
+    "text": "He has been studying English ___ five years.",
+    "options": {
+      "a": "since",
+      "b": "for",
+      "c": "during",
+      "d": "while"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 15,
+    "text": "The movie was ___ boring ___ I fell asleep.",
+    "options": {
+      "a": "such...that",
+      "b": "so...that",
+      "c": "too...to",
+      "d": "enough...to"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 16,
+    "text": "Neither the students ___ the teacher was satisfied.",
+    "options": {
+      "a": "or",
+      "b": "and",
+      "c": "nor",
+      "d": "but"
+    },
+    "correct": "c",
+    "difficulty": 2
+  },
+  {
+    "id": 17,
+    "text": "By the time he arrived, we ___ already left.",
+    "options": {
+      "a": "have",
+      "b": "had",
+      "c": "has",
+      "d": "were"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 18,
+    "text": "I wish I ___ more free time.",
+    "options": {
+      "a": "have",
+      "b": "has",
+      "c": "had",
+      "d": "having"
+    },
+    "correct": "c",
+    "difficulty": 2
+  },
+  {
+    "id": 19,
+    "text": "The children ___ to play outside despite the rain.",
+    "options": {
+      "a": "insisted",
+      "b": "insisted on",
+      "c": "insisted in",
+      "d": "insisted for"
+    },
+    "correct": "a",
+    "difficulty": 2
+  },
+  {
+    "id": 20,
+    "text": "She ___ living in Paris for three years before moving to London.",
+    "options": {
+      "a": "is",
+      "b": "was",
+      "c": "had been",
+      "d": "has been"
+    },
+    "correct": "c",
+    "difficulty": 2
+  },
+  {
+    "id": 21,
+    "text": "Had she known the truth, she ___ differently.",
+    "options": {
+      "a": "will act",
+      "b": "would act",
+      "c": "would have acted",
+      "d": "acts"
+    },
+    "correct": "c",
+    "difficulty": 3
+  },
+  {
+    "id": 22,
+    "text": "Not only ___ the exam, but she also got the highest mark.",
+    "options": {
+      "a": "she passed",
+      "b": "did she pass",
+      "c": "she did pass",
+      "d": "passed she"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 23,
+    "text": "The proposal, ___ was submitted last week, has been approved.",
+    "options": {
+      "a": "that",
+      "b": "which",
+      "c": "who",
+      "d": "whom"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 24,
+    "text": "It is imperative that he ___ on time.",
+    "options": {
+      "a": "arrives",
+      "b": "arrive",
+      "c": "arrived",
+      "d": "arriving"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 25,
+    "text": "Hardly ___ the station when the train departed.",
+    "options": {
+      "a": "I reached",
+      "b": "had I reached",
+      "c": "I had reached",
+      "d": "did I reach"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 26,
+    "text": "___ the circumstances, the decision was justified.",
+    "options": {
+      "a": "Given",
+      "b": "Giving",
+      "c": "Gave",
+      "d": "Give"
+    },
+    "correct": "a",
+    "difficulty": 3
+  },
+  {
+    "id": 27,
+    "text": "The findings are consistent ___ previous research.",
+    "options": {
+      "a": "to",
+      "b": "for",
+      "c": "with",
+      "d": "in"
+    },
+    "correct": "c",
+    "difficulty": 3
+  },
+  {
+    "id": 28,
+    "text": "She speaks ___ she were an expert on the subject.",
+    "options": {
+      "a": "like",
+      "b": "as if",
+      "c": "as",
+      "d": "such as"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 29,
+    "text": "No sooner had the meeting started ___ the fire alarm went off.",
+    "options": {
+      "a": "when",
+      "b": "than",
+      "c": "then",
+      "d": "that"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 30,
+    "text": "The data ___ analyzed using advanced statistical methods.",
+    "options": {
+      "a": "was",
+      "b": "were",
+      "c": "is",
+      "d": "has"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 31,
+    "text": "I don't have ___ money.",
+    "options": {
+      "a": "some",
+      "b": "any",
+      "c": "many",
+      "d": "few"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 32,
+    "text": "She ___ cook when she was five.",
+    "options": {
+      "a": "can",
+      "b": "could",
+      "c": "may",
+      "d": "will"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 33,
+    "text": "We enjoyed ___ at the party.",
+    "options": {
+      "a": "us",
+      "b": "our",
+      "c": "ourselves",
+      "d": "we"
+    },
+    "correct": "c",
+    "difficulty": 1
+  },
+  {
+    "id": 34,
+    "text": "My sister is ___ than me.",
+    "options": {
+      "a": "old",
+      "b": "older",
+      "c": "oldest",
+      "d": "more old"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 35,
+    "text": "He ___ to school every day.",
+    "options": {
+      "a": "walk",
+      "b": "walks",
+      "c": "walking",
+      "d": "walked"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 36,
+    "text": "The results ___ yet.",
+    "options": {
+      "a": "haven't announced",
+      "b": "haven't been announced",
+      "c": "didn't announce",
+      "d": "aren't announcing"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 37,
+    "text": "She suggested ___ a meeting.",
+    "options": {
+      "a": "to have",
+      "b": "having",
+      "c": "have",
+      "d": "had"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 38,
+    "text": "I ___ rather stay home tonight.",
+    "options": {
+      "a": "will",
+      "b": "shall",
+      "c": "would",
+      "d": "should"
+    },
+    "correct": "c",
+    "difficulty": 2
+  },
+  {
+    "id": 39,
+    "text": "The teacher made the students ___ the essay again.",
+    "options": {
+      "a": "to write",
+      "b": "write",
+      "c": "writing",
+      "d": "wrote"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 40,
+    "text": "You'd better ___ a doctor.",
+    "options": {
+      "a": "seeing",
+      "b": "to see",
+      "c": "see",
+      "d": "saw"
+    },
+    "correct": "c",
+    "difficulty": 2
+  },
+  {
+    "id": 41,
+    "text": "It was such ___ interesting book that I couldn't put it down.",
+    "options": {
+      "a": "a",
+      "b": "an",
+      "c": "the",
+      "d": "no article"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 42,
+    "text": "___ to the fact that resources are limited, we must prioritize.",
+    "options": {
+      "a": "Owed",
+      "b": "Owing",
+      "c": "Due",
+      "d": "Because"
+    },
+    "correct": "c",
+    "difficulty": 3
+  },
+  {
+    "id": 43,
+    "text": "The committee ___ divided in their opinions.",
+    "options": {
+      "a": "is",
+      "b": "are",
+      "c": "was",
+      "d": "has been"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 44,
+    "text": "Were it not for his help, I ___ have succeeded.",
+    "options": {
+      "a": "will not",
+      "b": "would not",
+      "c": "could",
+      "d": "shall not"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 45,
+    "text": "The phenomenon ___ to as 'groupthink' occurs in cohesive teams.",
+    "options": {
+      "a": "referring",
+      "b": "referred",
+      "c": "refers",
+      "d": "reference"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 46,
+    "text": "I look forward ___ hearing from you.",
+    "options": {
+      "a": "at",
+      "b": "for",
+      "c": "to",
+      "d": "in"
+    },
+    "correct": "c",
+    "difficulty": 1
+  },
+  {
+    "id": 47,
+    "text": "He's used to ___ early.",
+    "options": {
+      "a": "wake",
+      "b": "waking",
+      "c": "woke",
+      "d": "waken"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 48,
+    "text": "She ___ have left already; the lights are off.",
+    "options": {
+      "a": "must",
+      "b": "can",
+      "c": "should",
+      "d": "would"
+    },
+    "correct": "a",
+    "difficulty": 2
+  },
+  {
+    "id": 49,
+    "text": "The more you practice, ___ you become.",
+    "options": {
+      "a": "good",
+      "b": "the better",
+      "c": "better",
+      "d": "best"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 50,
+    "text": "Little ___ he know what awaited him.",
+    "options": {
+      "a": "do",
+      "b": "did",
+      "c": "does",
+      "d": "was"
+    },
+    "correct": "b",
+    "difficulty": 3
+  }
+]

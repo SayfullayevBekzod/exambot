@@ -1,0 +1,602 @@
+[
+  {
+    "id": 201,
+    "text": "What is the synonym of 'abundant'?",
+    "options": {
+      "a": "Scarce",
+      "b": "Plentiful",
+      "c": "Empty",
+      "d": "Rare"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 202,
+    "text": "What does 'benevolent' mean?",
+    "options": {
+      "a": "Cruel",
+      "b": "Kind and generous",
+      "c": "Angry",
+      "d": "Lazy"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 203,
+    "text": "Choose the antonym of 'ancient':",
+    "options": {
+      "a": "Old",
+      "b": "Historic",
+      "c": "Modern",
+      "d": "Traditional"
+    },
+    "correct": "c",
+    "difficulty": 1
+  },
+  {
+    "id": 204,
+    "text": "'Diligent' means:",
+    "options": {
+      "a": "Lazy",
+      "b": "Careless",
+      "c": "Hard-working",
+      "d": "Slow"
+    },
+    "correct": "c",
+    "difficulty": 1
+  },
+  {
+    "id": 205,
+    "text": "What is the meaning of 'essential'?",
+    "options": {
+      "a": "Optional",
+      "b": "Unnecessary",
+      "c": "Absolutely necessary",
+      "d": "Minor"
+    },
+    "correct": "c",
+    "difficulty": 1
+  },
+  {
+    "id": 206,
+    "text": "The word 'frequent' means:",
+    "options": {
+      "a": "Rare",
+      "b": "Often occurring",
+      "c": "Never",
+      "d": "Unique"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 207,
+    "text": "Choose the synonym of 'genuine':",
+    "options": {
+      "a": "Fake",
+      "b": "False",
+      "c": "Authentic",
+      "d": "Imitation"
+    },
+    "correct": "c",
+    "difficulty": 1
+  },
+  {
+    "id": 208,
+    "text": "'Hesitate' means to:",
+    "options": {
+      "a": "Act quickly",
+      "b": "Pause before acting",
+      "c": "Run away",
+      "d": "Agree immediately"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 209,
+    "text": "What does 'investigate' mean?",
+    "options": {
+      "a": "Ignore",
+      "b": "Examine closely",
+      "c": "Destroy",
+      "d": "Build"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 210,
+    "text": "The antonym of 'justify' is:",
+    "options": {
+      "a": "Support",
+      "b": "Explain",
+      "c": "Condemn",
+      "d": "Prove"
+    },
+    "correct": "c",
+    "difficulty": 1
+  },
+  {
+    "id": 211,
+    "text": "'Ubiquitous' means:",
+    "options": {
+      "a": "Rare",
+      "b": "Found everywhere",
+      "c": "Ancient",
+      "d": "Small"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 212,
+    "text": "What does 'rhetoric' refer to?",
+    "options": {
+      "a": "Mathematics",
+      "b": "Persuasive language",
+      "c": "Music theory",
+      "d": "Architecture"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 213,
+    "text": "'Pragmatic' describes someone who is:",
+    "options": {
+      "a": "Idealistic",
+      "b": "Practical and realistic",
+      "c": "Dreamy",
+      "d": "Emotional"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 214,
+    "text": "What is the meaning of 'scrutinize'?",
+    "options": {
+      "a": "Glance at",
+      "b": "Ignore",
+      "c": "Examine thoroughly",
+      "d": "Appreciate"
+    },
+    "correct": "c",
+    "difficulty": 2
+  },
+  {
+    "id": 215,
+    "text": "'Mitigate' means to:",
+    "options": {
+      "a": "Worsen",
+      "b": "Make less severe",
+      "c": "Increase",
+      "d": "Ignore"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 216,
+    "text": "The word 'plausible' means:",
+    "options": {
+      "a": "Impossible",
+      "b": "Ridiculous",
+      "c": "Seeming reasonable",
+      "d": "Confirmed"
+    },
+    "correct": "c",
+    "difficulty": 2
+  },
+  {
+    "id": 217,
+    "text": "'Concurrent' means:",
+    "options": {
+      "a": "Sequential",
+      "b": "Happening at the same time",
+      "c": "Afterwards",
+      "d": "Before"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 218,
+    "text": "What does 'ambiguous' mean?",
+    "options": {
+      "a": "Clear",
+      "b": "Open to interpretation",
+      "c": "Simple",
+      "d": "Definite"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 219,
+    "text": "'Proficient' is closest in meaning to:",
+    "options": {
+      "a": "Beginner",
+      "b": "Average",
+      "c": "Highly skilled",
+      "d": "Amateur"
+    },
+    "correct": "c",
+    "difficulty": 2
+  },
+  {
+    "id": 220,
+    "text": "The word 'volatile' means:",
+    "options": {
+      "a": "Stable",
+      "b": "Calm",
+      "c": "Liable to change rapidly",
+      "d": "Permanent"
+    },
+    "correct": "c",
+    "difficulty": 2
+  },
+  {
+    "id": 221,
+    "text": "'Paradigm' refers to:",
+    "options": {
+      "a": "A typical example or pattern",
+      "b": "A type of graph",
+      "c": "A mathematical formula",
+      "d": "A paragraph style"
+    },
+    "correct": "a",
+    "difficulty": 3
+  },
+  {
+    "id": 222,
+    "text": "'Juxtaposition' means:",
+    "options": {
+      "a": "Separation",
+      "b": "Placing close together for comparison",
+      "c": "Opposition",
+      "d": "Harmony"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 223,
+    "text": "What does 'exacerbate' mean?",
+    "options": {
+      "a": "Improve",
+      "b": "Make worse",
+      "c": "Solve",
+      "d": "Prevent"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 224,
+    "text": "'Dichotomy' means:",
+    "options": {
+      "a": "Agreement",
+      "b": "Division into two contrasting parts",
+      "c": "Unity",
+      "d": "Combination"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 225,
+    "text": "The word 'perfunctory' means:",
+    "options": {
+      "a": "Thorough",
+      "b": "Carried out with minimum effort",
+      "c": "Enthusiastic",
+      "d": "Detailed"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 226,
+    "text": "'Propensity' means:",
+    "options": {
+      "a": "Dislike",
+      "b": "A natural tendency",
+      "c": "Reluctance",
+      "d": "Opposition"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 227,
+    "text": "What does 'enigmatic' mean?",
+    "options": {
+      "a": "Clear",
+      "b": "Obvious",
+      "c": "Mysterious and puzzling",
+      "d": "Simple"
+    },
+    "correct": "c",
+    "difficulty": 3
+  },
+  {
+    "id": 228,
+    "text": "'Commensurate' means:",
+    "options": {
+      "a": "Unequal",
+      "b": "Corresponding in size or degree",
+      "c": "Opposite",
+      "d": "Random"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 229,
+    "text": "The word 'ephemeral' means:",
+    "options": {
+      "a": "Lasting forever",
+      "b": "Short-lived",
+      "c": "Important",
+      "d": "Heavy"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 230,
+    "text": "'Quintessential' means:",
+    "options": {
+      "a": "Ordinary",
+      "b": "Representing the perfect example",
+      "c": "Unusual",
+      "d": "Minor"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 231,
+    "text": "What does 'comprehensive' mean?",
+    "options": {
+      "a": "Partial",
+      "b": "Including everything",
+      "c": "Small",
+      "d": "Quick"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 232,
+    "text": "'Diverse' means:",
+    "options": {
+      "a": "Same",
+      "b": "Showing variety",
+      "c": "Single",
+      "d": "Boring"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 233,
+    "text": "The synonym of 'demonstrate' is:",
+    "options": {
+      "a": "Hide",
+      "b": "Show",
+      "c": "Destroy",
+      "d": "Forget"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 234,
+    "text": "What does 'collaborate' mean?",
+    "options": {
+      "a": "Work alone",
+      "b": "Work together",
+      "c": "Compete",
+      "d": "Argue"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 235,
+    "text": "'Innovative' means:",
+    "options": {
+      "a": "Traditional",
+      "b": "Introducing new ideas",
+      "c": "Outdated",
+      "d": "Boring"
+    },
+    "correct": "b",
+    "difficulty": 1
+  },
+  {
+    "id": 236,
+    "text": "'Deteriorate' means to:",
+    "options": {
+      "a": "Improve",
+      "b": "Become worse",
+      "c": "Stay the same",
+      "d": "Fix"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 237,
+    "text": "The word 'infer' means:",
+    "options": {
+      "a": "To state directly",
+      "b": "To conclude from evidence",
+      "c": "To repeat",
+      "d": "To forget"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 238,
+    "text": "'Predominant' means:",
+    "options": {
+      "a": "Minor",
+      "b": "Main or most common",
+      "c": "Equal",
+      "d": "Absent"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 239,
+    "text": "What does 'sustain' mean?",
+    "options": {
+      "a": "To stop",
+      "b": "To maintain or support",
+      "c": "To break",
+      "d": "To ignore"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 240,
+    "text": "'Subtle' means:",
+    "options": {
+      "a": "Obvious",
+      "b": "Delicate and not immediately noticeable",
+      "c": "Loud",
+      "d": "Violent"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 241,
+    "text": "'Empirical' refers to:",
+    "options": {
+      "a": "Theoretical only",
+      "b": "Based on observation or experiment",
+      "c": "Imaginary",
+      "d": "Traditional"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 242,
+    "text": "'Reconcile' means:",
+    "options": {
+      "a": "To fight",
+      "b": "To restore harmony",
+      "c": "To separate",
+      "d": "To destroy"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 243,
+    "text": "'Substantiate' means:",
+    "options": {
+      "a": "To deny",
+      "b": "To provide evidence for",
+      "c": "To ignore",
+      "d": "To weaken"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 244,
+    "text": "'Delineate' means:",
+    "options": {
+      "a": "To confuse",
+      "b": "To describe or outline precisely",
+      "c": "To erase",
+      "d": "To mix"
+    },
+    "correct": "b",
+    "difficulty": 3
+  },
+  {
+    "id": 245,
+    "text": "'Inherent' means:",
+    "options": {
+      "a": "External",
+      "b": "Existing as a natural part",
+      "c": "Added later",
+      "d": "Temporary"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 246,
+    "text": "'Allocate' means:",
+    "options": {
+      "a": "To waste",
+      "b": "To distribute for a purpose",
+      "c": "To keep",
+      "d": "To hide"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 247,
+    "text": "'Preliminary' means:",
+    "options": {
+      "a": "Final",
+      "b": "Coming before the main part",
+      "c": "Complete",
+      "d": "Extra"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 248,
+    "text": "'Facet' means:",
+    "options": {
+      "a": "A complete picture",
+      "b": "One aspect of something",
+      "c": "A surface",
+      "d": "A mistake"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 249,
+    "text": "'Candid' means:",
+    "options": {
+      "a": "Secretive",
+      "b": "Honest and straightforward",
+      "c": "Shy",
+      "d": "Reserved"
+    },
+    "correct": "b",
+    "difficulty": 2
+  },
+  {
+    "id": 250,
+    "text": "'Benign' means:",
+    "options": {
+      "a": "Harmful",
+      "b": "Gentle and not harmful",
+      "c": "Aggressive",
+      "d": "Dangerous"
+    },
+    "correct": "b",
+    "difficulty": 3
+  }
+]

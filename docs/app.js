@@ -1,12 +1,13 @@
 /* === IELTS Mini App — Enhanced JavaScript === */
 
-const API_BASE = window.location.origin + '/api';
 const tg = window.Telegram?.WebApp;
 let userId = 0;
 let currentQuiz = null;
 let flashcards = [];
 let currentFcIndex = 0;
 let timerInterval = null;
+let isStaticMode = false; // true = GitHub Pages (no API)
+let API_BASE = '';
 
 // === Init ===
 document.addEventListener('DOMContentLoaded', async () => {
@@ -18,10 +19,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         const name = tg.initDataUnsafe.user.first_name || 'Foydalanuvchi';
         document.getElementById('userAvatar').textContent = name.charAt(0).toUpperCase();
     } else {
-        // Browser test mode — URL dan user_id olish yoki default
         const params = new URLSearchParams(window.location.search);
         userId = parseInt(params.get('user_id')) || 1258119183;
         document.getElementById('userAvatar').textContent = 'T';
+    }
+
+    // Detect if API is available or static mode (GitHub Pages)
+    API_BASE = window.location.origin + '/api';
+    try {
+        const test = await fetch(API_BASE + '/subjects', { signal: AbortSignal.timeout(2000) });
+        if (!test.ok) throw new Error('no api');
+        isStaticMode = false;
+    } catch {
+        isStaticMode = true;
+        console.log('📦 Static mode — loading from JSON files');
     }
 
     try {
@@ -46,8 +57,9 @@ function switchTab(tab) {
     if (tab === 'flashcards') loadFlashcards();
 }
 
-// === API Helper ===
+// === API / Static Helper ===
 async function apiFetch(endpoint) {
+    if (isStaticMode) return null;
     try {
         const sep = endpoint.includes('?') ? '&' : '?';
         const res = await fetch(`${API_BASE}${endpoint}${sep}user_id=${userId}`);
@@ -55,6 +67,17 @@ async function apiFetch(endpoint) {
         return await res.json();
     } catch (e) {
         console.error('API error:', e);
+        return null;
+    }
+}
+
+async function loadStaticJSON(filename) {
+    try {
+        const res = await fetch(`data/${filename}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return await res.json();
+    } catch (e) {
+        console.error('Static load error:', e);
         return null;
     }
 }
@@ -69,7 +92,8 @@ let selectedSubjectName = '';
 let selectedSubjectEmoji = '';
 
 async function loadSubjects() {
-    const data = await apiFetch('/subjects');
+    let data = await apiFetch('/subjects');
+    if (!data) data = await loadStaticJSON('subjects.json');
     if (!data) return;
     allSubjects = data;
 
@@ -103,7 +127,8 @@ async function startDailyChallenge() {
     // Mix questions from all subjects
     let allQuestions = [];
     for (const s of allSubjects) {
-        const data = await apiFetch(`/questions/${s.id}`);
+        let data = await apiFetch(`/questions/${s.id}`);
+        if (!data) data = await loadStaticJSON(`questions_${s.id}.json`);
         if (data) allQuestions = allQuestions.concat(data.map(q => ({ ...q, subjectEmoji: s.emoji })));
     }
     if (allQuestions.length === 0) { showToast('❌', 'Savollar topilmadi!'); return; }
@@ -120,6 +145,7 @@ async function startDailyChallenge() {
 
 async function startQuiz(subjectId, name, emoji, difficulty) {
     let data = await apiFetch(`/questions/${subjectId}`);
+    if (!data) data = await loadStaticJSON(`questions_${subjectId}.json`);
     if (!data || data.length === 0) { showToast('❌', 'Savollar topilmadi!'); return; }
 
     // Filter by difficulty
