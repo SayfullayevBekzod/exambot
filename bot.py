@@ -3,6 +3,7 @@ import os
 import json
 import logging
 import asyncio
+import time
 
 from telegram import Update
 from telegram.ext import (
@@ -127,11 +128,10 @@ def load_initial_data():
         session.close()
 
 
-async def main():
-    print("💡 IELTS Preparation Bot: Versiya 1.0.4 (Conflict & NameError Fix)")
+def main():
     if os.environ.get("RENDER"):
         print("⏳ Render muhiti aniqlandi. 30 soniya kutilyapti...")
-        await asyncio.sleep(30)
+        time.sleep(30)
 
     if not BOT_TOKEN:
         print("❌ BOT_TOKEN topilmadi! .env faylga bot tokenini yozing.")
@@ -260,9 +260,8 @@ async def main():
 
 
 if __name__ == "__main__":
-    import asyncio
     try:
-        asyncio.run(main())
+        main()
     except KeyboardInterrupt:
         pass
     except Exception as e:
