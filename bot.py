@@ -193,7 +193,7 @@ async def main():
         (r"^fc_load_defaults$", load_defaults_callback),
         (r"^fc_reveal_\d+$", reveal_flashcard_callback),
         (r"^fc_(knew|didnt)_\d+$", flashcard_response_callback),
-        (r"^fc_stats$", flashcard_flashcard_stats_callback),
+        (r"^fc_stats$", flashcard_stats_callback),
         # Study Plan
         (r"^plan_create_(30|60|90)$", plan_create_callback),
         (r"^plan_done_today$", plan_done_callback),
