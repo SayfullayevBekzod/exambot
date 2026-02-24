@@ -2,6 +2,7 @@
 import os
 import json
 import logging
+import asyncio
 
 from telegram import Update
 from telegram.ext import (
@@ -240,18 +241,9 @@ def main():
     # === Jobs ===
     setup_daily_jobs(app.job_queue)
 
-def main():
-    persistence = PicklePersistence(filepath="persistence.pickle")
-    app = ApplicationBuilder().token(BOT_TOKEN).persistence(persistence).build()
+    print("🤖 IELTS Preparation Bot ishga tushdi!")
+    app.run_polling(drop_pending_updates=True)
 
-    # ... (rest of registration remains the same)
-    # Note: I'm skipping repeating the hundreds of lines of registration for brevity
-    # but the logic below is what changes at the end of the script:
-
-async def run_bot():
-    # Actual start logic
-    # Re-running the full main logic inside an async function is cleaner
-    pass
 
 if __name__ == "__main__":
     import asyncio
