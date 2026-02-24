@@ -1,5 +1,6 @@
+from contextlib import contextmanager
 from datetime import datetime
-from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime, ForeignKey, Float, Boolean
+from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime, ForeignKey, Float, Boolean, text
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 
 from config import DB_URL
@@ -98,8 +99,8 @@ class UserSettings(Base):
     reminder_time = Column(String(5), default="09:00")
     daily_test_enabled = Column(Boolean, default=False)
     daily_word_enabled = Column(Boolean, default=False)
-    translation_mode = Column(Boolean, default=False)  # Tarjima rejimi
-    is_premium = Column(Boolean, default=False)  # Premium obuna
+    translation_mode = Column(Boolean, default=False)
+    is_premium = Column(Boolean, default=False)
 
 
 class DailyStreak(Base):
@@ -113,26 +114,24 @@ class DailyStreak(Base):
 
 
 class SpacedRepetition(Base):
-    """SM-2 algoritmiga asoslangan takrorlash"""
     __tablename__ = "spaced_repetition"
     id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, nullable=False, index=True)
     question_id = Column(Integer, ForeignKey("questions.id"), nullable=False)
     easiness_factor = Column(Float, default=2.5)
-    interval = Column(Integer, default=1)  # kunlar
+    interval = Column(Integer, default=1)
     repetitions = Column(Integer, default=0)
-    next_review = Column(String(10), default="")  # YYYY-MM-DD
+    next_review = Column(String(10), default="")
     last_reviewed = Column(String(10), default="")
     question = relationship("Question")
 
 
 class Flashcard(Base):
-    """So'z kartochkalari"""
     __tablename__ = "flashcards"
     id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, nullable=False, index=True)
-    front = Column(Text, nullable=False)  # Inglizcha
-    back = Column(Text, nullable=False)  # O'zbekcha
+    front = Column(Text, nullable=False)
+    back = Column(Text, nullable=False)
     example = Column(Text, default="")
     category = Column(String(50), default="general")
     mastered = Column(Boolean, default=False)
@@ -140,11 +139,10 @@ class Flashcard(Base):
 
 
 class StudyPlan(Base):
-    """Shaxsiy o'qish rejasi"""
     __tablename__ = "study_plans"
     id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, unique=True, nullable=False, index=True)
-    plan_type = Column(String(10), default="30")  # 30, 60, 90 kun
+    plan_type = Column(String(10), default="30")
     target_band = Column(Float, default=6.5)
     start_date = Column(String(10), default="")
     current_day = Column(Integer, default=1)
@@ -152,14 +150,13 @@ class StudyPlan(Base):
 
 
 class PremiumSubscription(Base):
-    """Premium obuna to'lovlari"""
     __tablename__ = "premium_subscriptions"
     id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, nullable=False, index=True)
-    plan_key = Column(String(20), nullable=False)  # 1_month, 3_months, 6_months
-    amount = Column(Integer, nullable=False)  # so'mda
-    payment_id = Column(String(100), default="")  # Telegram payment charge ID
-    provider_payment_id = Column(String(100), default="")  # Click payment ID
+    plan_key = Column(String(20), nullable=False)
+    amount = Column(Integer, nullable=False)
+    payment_id = Column(String(100), default="")
+    provider_payment_id = Column(String(100), default="")
     start_date = Column(DateTime, default=datetime.utcnow)
     end_date = Column(DateTime, nullable=False, index=True)
     is_active = Column(Boolean, default=True)
@@ -167,37 +164,69 @@ class PremiumSubscription(Base):
 
 
 def check_premium(user_id):
-    """Foydalanuvchi premium ekanligini tekshirish"""
     session = Session()
     try:
-        # UserSettings da is_premium tekshirish
         settings = session.query(UserSettings).filter_by(user_id=user_id).first()
         if settings and settings.is_premium:
-            # Obuna muddatini tekshirish
             sub = session.query(PremiumSubscription).filter_by(
                 user_id=user_id, is_active=True
             ).order_by(PremiumSubscription.end_date.desc()).first()
             if sub and sub.end_date > datetime.utcnow():
                 return True
             elif sub and sub.end_date <= datetime.utcnow():
-                # Muddati tugagan — premium o'chirish
                 settings.is_premium = False
                 sub.is_active = False
                 session.commit()
                 return False
             else:
-                # Admin yoki bepul aktivlashtirilgan
                 return True
         return False
     finally:
         session.close()
 
 
+def fix_sequences():
+    """PostgreSQL sequences sinxronizatsiya qilish"""
+    if "postgresql" not in DB_URL:
+        return
+
+    tables = [
+        "subjects", "questions", "user_results", "wrong_answers",
+        "user_achievements", "user_settings", "daily_streaks",
+        "spaced_repetition", "flashcards", "study_plans",
+        "premium_subscriptions"
+    ]
+
+    with engine.connect() as conn:
+        for table in tables:
+            try:
+                sql = text(f"SELECT setval(pg_get_serial_sequence('{table}', 'id'), coalesce(max(id), 0) + 1, false) FROM {table};")
+                conn.execute(sql)
+            except Exception:
+                pass
+        conn.commit()
+
+
 def init_db():
     Base.metadata.create_all(engine)
-    print("✅ Database tayyor!")
+    fix_sequences()
+    print("✅ Database tayyor (Sequences sinxronlandi)!")
 
 
 def get_session():
     return Session()
+
+
+@contextmanager
+def session_scope():
+    """Tranzaksiyalar uchun context manager"""
+    session = Session()
+    try:
+        yield session
+        session.commit()
+    except Exception:
+        session.rollback()
+        raise
+    finally:
+        session.close()
 
