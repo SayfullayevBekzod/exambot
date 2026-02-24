@@ -128,8 +128,7 @@ def load_initial_data():
 
 
 async def main():
-    # Render rolling update paytida 'Conflict' xatosini oldini olish uchun biroz kutamiz.
-    # Bu vaqt ichida yangi web-server 'Healthy' bo'ladi va Render eski botni o'chiradi.
+    print("💡 IELTS Preparation Bot: Versiya 1.0.4 (Conflict & NameError Fix)")
     if os.environ.get("RENDER"):
         print("⏳ Render muhiti aniqlandi. 30 soniya kutilyapti...")
         await asyncio.sleep(30)
