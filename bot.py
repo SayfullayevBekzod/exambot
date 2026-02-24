@@ -68,14 +68,19 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
         f"⚠️ <b>Kritik Xato!</b>\n\n"
         f"Update: <code>{update}</code>\n\n"
         f"Xato matni: <code>{str(context.error)}</code>\n\n"
-        f"Tafsilotlar:\n<pre>{tb_string[:3000]}</pre>"
+        f"Tafsilotlar:\n<pre>{tb_string[:3500]}</pre>"
     )
     
     for admin_id in ADMIN_IDS:
         try:
             await context.bot.send_message(chat_id=admin_id, text=message, parse_mode="HTML")
-        except Exception:
-            pass
+        except Exception as e:
+            # Agar xabar juda uzun bo'lsa yoki boshqa xato bo'lsa, qisqaroq variantni yuboramiz
+            try:
+                short_msg = f"⚠️ <b>Xato:</b> {str(context.error)[:200]}"
+                await context.bot.send_message(chat_id=admin_id, text=short_msg, parse_mode="HTML")
+            except:
+                pass
 
     # Foydalanuvchiga xabar
     if isinstance(update, Update) and update.effective_message:

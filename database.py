@@ -6,13 +6,16 @@ from config import DB_URL
 
 # Engine sozlamalari (PostgreSQL uchun optimallash)
 if "postgresql" in DB_URL:
+    # Neon va boshqa cloud DBlar uchun SSL muhim
+    connect_args = {"sslmode": "require"}
     engine = create_engine(
         DB_URL,
         echo=False,
-        pool_pre_ping=True,  # Ulanish o'chib qolganini tekshirish
-        pool_recycle=300,    # Ulanishni har 5 daqiqada yangilash
-        pool_size=10,        # Asosiy ulanishlar soni
-        max_overflow=20      # Qo'shimcha ulanishlar
+        connect_args=connect_args,
+        pool_pre_ping=True,
+        pool_recycle=300,
+        pool_size=5,
+        max_overflow=10
     )
 else:
     engine = create_engine(DB_URL, echo=False)
