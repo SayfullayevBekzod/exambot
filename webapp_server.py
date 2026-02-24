@@ -260,5 +260,6 @@ def api_premium_status():
 if __name__ == '__main__':
     from database import init_db
     init_db()
-    print("🌐 WebApp server: http://localhost:8080")
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    port = int(os.environ.get("PORT", 8080))
+    print(f"🌐 WebApp server running on port {port}")
+    app.run(host='0.0.0.0', port=port)
