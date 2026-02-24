@@ -131,8 +131,8 @@ async def main():
     # Render rolling update paytida 'Conflict' xatosini oldini olish uchun biroz kutamiz.
     # Bu vaqt ichida yangi web-server 'Healthy' bo'ladi va Render eski botni o'chiradi.
     if os.environ.get("RENDER"):
-        print("⏳ Render muhiti aniqlandi. 20 soniya kutilyapti...")
-        await asyncio.sleep(20)
+        print("⏳ Render muhiti aniqlandi. 30 soniya kutilyapti...")
+        await asyncio.sleep(30)
 
     if not BOT_TOKEN:
         print("❌ BOT_TOKEN topilmadi! .env faylga bot tokenini yozing.")
@@ -193,7 +193,7 @@ async def main():
         (r"^fc_load_defaults$", load_defaults_callback),
         (r"^fc_reveal_\d+$", reveal_flashcard_callback),
         (r"^fc_(knew|didnt)_\d+$", flashcard_response_callback),
-        (r"^fc_stats$", flashcard_stats_callback),
+        (r"^fc_stats$", flashcard_flashcard_stats_callback),
         # Study Plan
         (r"^plan_create_(30|60|90)$", plan_create_callback),
         (r"^plan_done_today$", plan_done_callback),
@@ -254,15 +254,24 @@ async def main():
 
     print("🤖 IELTS Preparation Bot ishga tushdi!")
     
-    # PTB v21.10+ run_polling handles the loop internally if called correctly 
-    # but we can initialize it to be safe
-    async with app:
-        await app.initialize()
-        await app.start()
-        await app.updater.start_polling(drop_pending_updates=True)
-        # Keep running
-        while True:
-            await asyncio.sleep(3600)
+    # Conflict xatosiga chidamli ishga tushirish (Retry loop)
+    while True:
+        try:
+            async with app:
+                await app.initialize()
+                await app.start()
+                await app.updater.start_polling(drop_pending_updates=True)
+                # Keep running
+                while True:
+                    await asyncio.sleep(3600)
+        except Exception as e:
+            if "Conflict" in str(e) or "terminated by other getUpdates" in str(e).lower():
+                print("⚠️ Mojaro (Conflict) aniqlandi. Boshqa instance ishlayapti. 30 soniya kutib qayta urinamiz...")
+                await asyncio.sleep(30)
+                continue
+            else:
+                print(f"❌ Kritik xato: {e}")
+                raise e
 
 
 if __name__ == "__main__":
