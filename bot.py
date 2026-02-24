@@ -122,7 +122,7 @@ def load_initial_data():
         session.close()
 
 
-def main():
+async def main():
     if not BOT_TOKEN:
         print("❌ BOT_TOKEN topilmadi! .env faylga bot tokenini yozing.")
         return
@@ -242,19 +242,23 @@ def main():
     setup_daily_jobs(app.job_queue)
 
     print("🤖 IELTS Preparation Bot ishga tushdi!")
-    app.run_polling(drop_pending_updates=True)
+    
+    # PTB v21.10+ run_polling handles the loop internally if called correctly 
+    # but we can initialize it to be safe
+    async with app:
+        await app.initialize()
+        await app.start()
+        await app.updater.start_polling(drop_pending_updates=True)
+        # Keep running
+        while True:
+            await asyncio.sleep(3600)
 
 
 if __name__ == "__main__":
     import asyncio
     try:
-        # Standard way
-        main()
-    except RuntimeError as e:
-        if "no current event loop" in str(e):
-            # Fallback for Python 3.13+ where get_event_loop() is stricter
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            main()
-        else:
-            raise e
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        pass
+    except Exception as e:
+        logger.error(f"Fatal error: {e}", exc_info=True)
