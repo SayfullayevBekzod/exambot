@@ -32,12 +32,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Detect if API is available or static mode (GitHub Pages)
     API_BASE = window.location.origin + '/api';
     try {
-        const test = await fetch(API_BASE + '/subjects', { signal: AbortSignal.timeout(2000) });
+        console.log('🔍 Testing API connectivity:', API_BASE + '/subjects');
+        const test = await fetch(API_BASE + '/subjects', { signal: AbortSignal.timeout(5000) });
         if (!test.ok) throw new Error('no api');
         isStaticMode = false;
-    } catch {
+        console.log('✅ API mode active');
+    } catch (e) {
         isStaticMode = true;
-        console.log('📦 Static mode — loading from JSON files');
+        console.warn('📦 Static mode — loading from JSON files. Reason:', e.message);
     }
 
     try {
@@ -78,7 +80,7 @@ async function apiFetch(endpoint) {
 
 async function loadStaticJSON(filename) {
     try {
-        const res = await fetch(`static_data/${filename}`);
+        const res = await fetch(`data/${filename}`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return await res.json();
     } catch (e) {
