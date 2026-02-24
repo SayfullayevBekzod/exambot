@@ -253,24 +253,10 @@ async def main():
 
     print("🤖 IELTS Preparation Bot ishga tushdi!")
     
-    # Conflict xatosiga chidamli ishga tushirish (Retry loop)
-    while True:
-        try:
-            async with app:
-                await app.initialize()
-                await app.start()
-                await app.updater.start_polling(drop_pending_updates=True)
-                # Keep running
-                while True:
-                    await asyncio.sleep(3600)
-        except Exception as e:
-            if "Conflict" in str(e) or "terminated by other getUpdates" in str(e).lower():
-                print("⚠️ Mojaro (Conflict) aniqlandi. Boshqa instance ishlayapti. 30 soniya kutib qayta urinamiz...")
-                await asyncio.sleep(30)
-                continue
-            else:
-                print(f"❌ Kritik xato: {e}")
-                raise e
+    # run_polling - eng barqaror va tavsiya etilgan ishga tushirish usuli
+    # drop_pending_updates=True avvalgi to'planib qolgan (va conflict keltirib chiqarishi mumkin bo'lgan) 
+    # xabarlarni tozalaydi.
+    app.run_polling(drop_pending_updates=True)
 
 
 if __name__ == "__main__":
