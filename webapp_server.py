@@ -17,10 +17,24 @@ app = Flask(__name__, static_folder=os.path.join(BASE_DIR, 'webapp'), static_url
 CORS(app)
 
 
+# === Diagnostics ===
+print(f"DEBUG: BASE_DIR is {BASE_DIR}")
+print(f"DEBUG: static_folder is {app.static_folder}")
+if os.path.exists(app.static_folder):
+    print(f"DEBUG: Files in static_folder: {os.listdir(app.static_folder)}")
+else:
+    print(f"DEBUG: static_folder DOES NOT EXIST!")
+
+
 # === Static files ===
+@app.route('/health')
+def health():
+    return "OK", 200
+
+
 @app.route('/')
 def index():
-    return send_from_directory(app.static_folder, 'index.html')
+    return app.send_static_file('index.html')
 
 
 @app.route('/<path:path>')

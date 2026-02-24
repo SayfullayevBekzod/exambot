@@ -123,6 +123,12 @@ def load_initial_data():
 
 
 async def main():
+    # Render rolling update paytida 'Conflict' xatosini oldini olish uchun biroz kutamiz.
+    # Bu vaqt ichida yangi web-server 'Healthy' bo'ladi va Render eski botni o'chiradi.
+    if os.environ.get("RENDER"):
+        print("⏳ Render muhiti aniqlandi. 20 soniya kutilyapti...")
+        await asyncio.sleep(20)
+
     if not BOT_TOKEN:
         print("❌ BOT_TOKEN topilmadi! .env faylga bot tokenini yozing.")
         return
