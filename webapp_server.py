@@ -12,19 +12,20 @@ from database import (
     UserSettings, DailyStreak, PremiumSubscription, check_premium,
 )
 
-app = Flask(__name__, static_folder='webapp', static_url_path='')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+app = Flask(__name__, static_folder=os.path.join(BASE_DIR, 'webapp'), static_url_path='')
 CORS(app)
 
 
 # === Static files ===
 @app.route('/')
 def index():
-    return send_from_directory('webapp', 'index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route('/<path:path>')
 def static_files(path):
-    return send_from_directory('webapp', path)
+    return send_from_directory(app.static_folder, path)
 
 
 # === API ===
