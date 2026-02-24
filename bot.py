@@ -58,11 +58,13 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
     from config import ADMIN_IDS
     import traceback
     
-    logger.error("Xato yuz berdi:", exc_info=context.error)
-    
-    # Conflict xatolarini (deployment paytidagi) adminga yubormaymiz
-    if "Conflict" in str(context.error) or "terminated by other getUpdates" in str(context.error).lower():
+    # Conflict xatolarini (deployment paytidagi) logda kamroq ko'rsatamiz va adminga yubormaymiz
+    err_str = str(context.error)
+    if "Conflict" in err_str or "terminated by other getUpdates" in err_str.lower():
+        logger.warning(f"⚠️ Polling Conflict (ehtimol boshqa bot instansiyasi ishlayapti): {err_str}")
         return
+
+    logger.error("Xato yuz berdi:", exc_info=context.error)
     tb_list = traceback.format_exception(None, context.error, context.error.__traceback__)
     tb_string = "".join(tb_list)
     
