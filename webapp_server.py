@@ -114,16 +114,24 @@ def api_stats():
     user_id = request.args.get('user_id', 0, type=int)
     session = get_session()
     try:
-        results = (
+        # Get more results for the trend chart (up to 50)
+        trend_results = (
             session.query(UserResult)
             .filter_by(user_id=user_id)
-            .order_by(UserResult.completed_at.desc())
-            .limit(20)
+            .order_by(UserResult.completed_at.asc())
             .all()
         )
+        
+        # We'll take the latest 30 for the chart to keep it clean but readable
+        chart_trend = [
+            {'date': r.completed_at.strftime('%d.%m'), 'pct': round(r.percentage)}
+            for r in trend_results[-30:]
+        ] if trend_results else []
 
-        total_tests = len(results)
-        avg_pct = round(sum(r.percentage for r in results) / total_tests, 1) if total_tests > 0 else 0
+        # Latest results for the history list
+        latest_results = trend_results[::-1][:10]
+        total_tests = len(trend_results)
+        avg_pct = round(sum(r.percentage for r in trend_results) / total_tests, 1) if total_tests > 0 else 0
 
         if avg_pct >= 90: avg_band = '8.0+'
         elif avg_pct >= 75: avg_band = '7.0'
@@ -135,7 +143,7 @@ def api_stats():
         streak_obj = session.query(DailyStreak).filter_by(user_id=user_id).first()
         streak = streak_obj.current_streak if streak_obj else 0
 
-        # Subject performance bars
+        # Subject performance (Radar Chart data)
         subject_stats = []
         ss_raw = (
             session.query(
@@ -155,9 +163,9 @@ def api_stats():
                     'avg': round(sr.avg_pct, 1),
                 })
 
-        # History
+        # History list
         history = []
-        for r in results[:10]:
+        for r in latest_results:
             subj = session.query(Subject).get(r.subject_id)
             history.append({
                 'subject': subj.name if subj else '?',
@@ -192,6 +200,7 @@ def api_stats():
             'subject_stats': subject_stats,
             'history': history,
             'leaderboard': leaderboard,
+            'chart_trend': chart_trend,
         })
     finally:
         session.close()

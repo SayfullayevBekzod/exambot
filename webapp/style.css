@@ -211,6 +211,7 @@ body {
     letter-spacing: 0.5px;
     background: linear-gradient(135deg, #6366f1, #a78bfa, #c084fc);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1588,6 +1589,264 @@ body {
     font-size: 14px;
 }
 
+/* === CBT Promo === */
+.cbt-simulator-promo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(99, 102, 241, 0.1));
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.cbt-simulator-promo:hover {
+    border-color: #06b6d4;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(6, 182, 212, 0.2);
+}
+
+.csp-icon {
+    font-size: 32px;
+}
+
+.csp-info {
+    flex: 1;
+}
+
+.csp-title {
+    font-weight: 800;
+    font-size: 16px;
+    color: #06b6d4;
+}
+
+.csp-sub {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.csp-badge {
+    background: #06b6d4;
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+/* === Stats Charts === */
+.stats-charts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.chart-container-glass {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius);
+    padding: 20px;
+}
+
+.chart-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+}
+
+/* === CBT Overlay === */
+.cbt-overlay {
+    position: fixed;
+    inset: 0;
+    background: #0b0f1a;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    /* Classic CBT look uses light background sometimes, but we'll stick to a professional theme */
+}
+
+/* CBT uses a more formal, high-contrast UI */
+.cbt-overlay {
+    background: #f0f2f5;
+    color: #1a1a1a;
+}
+
+.cbt-header {
+    background: #2c3e50;
+    color: white;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cbt-logo {
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.cbt-sub-title {
+    margin-left: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    padding-left: 15px;
+}
+
+.cbt-timer {
+    background: #e74c3c;
+    padding: 6px 20px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.cbt-workspace {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.cbt-passage-side {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    overflow-y: auto;
+    border-right: 2px solid #ddd;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.cbt-question-side {
+    flex: 1;
+    background: #f8f9fa;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.cbt-question-container {
+    max-width: 600px;
+}
+
+.cbt-q-item {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.cbt-q-text {
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.cbt-opt {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cbt-opt:hover {
+    background: #f0f7ff;
+}
+
+.cbt-opt.selected {
+    background: #e3f2fd;
+    border-color: #2196f3;
+}
+
+.cbt-opt-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected .cbt-opt-radio {
+    border-color: #2196f3;
+}
+
+.selected .cbt-opt-radio::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #2196f3;
+    border-radius: 50%;
+}
+
+.cbt-footer {
+    background: white;
+    border-top: 1px solid #ddd;
+    padding: 15px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cbt-nav-pills {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    max-width: 70%;
+}
+
+.cbt-pill {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    background: white;
+}
+
+.cbt-pill.active {
+    border-color: #2c3e50;
+    border-width: 2px;
+}
+
+.cbt-pill.answered {
+    background: #dcfce7;
+    border-color: #22c55e;
+}
+
+/* Highlight tool */
+::selection {
+    background: #fff59d;
+    color: #000;
+}
+
+.highlighted {
+    background-color: #fff59d;
+}
+
 /* === Responsive === */
 @media (max-width: 360px) {
     .stats-overview {
@@ -1600,5 +1859,24 @@ body {
 
     .fc-actions {
         gap: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cbt-workspace {
+        flex-direction: column;
+    }
+
+    .cbt-passage-side,
+    .cbt-question-side {
+        flex: none;
+        height: 50%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding: 20px;
+    }
+
+    .cbt-nav-pills {
+        display: none;
     }
 }

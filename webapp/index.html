@@ -9,6 +9,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -64,6 +65,15 @@
                             <div class="dc-sub">Barcha bo'limlardan 10 ta savol</div>
                         </div>
                         <div class="dc-arrow">→</div>
+                    </div>
+
+                    <div class="cbt-simulator-promo" onclick="openCBTSimulator()">
+                        <div class="csp-icon">🖥️</div>
+                        <div class="csp-info">
+                            <div class="csp-title">IELTS CBT Simulator</div>
+                            <div class="csp-sub">Haqiqiy imtihon ko'rinishida topshirish</div>
+                        </div>
+                        <div class="csp-badge">New</div>
                     </div>
                 </div>
 
@@ -250,6 +260,18 @@
                         </div>
                     </div>
 
+                    <!-- Interactive Charts -->
+                    <div class="stats-charts-grid">
+                        <div class="chart-container-glass">
+                            <h3 class="chart-title">📈 Band Score Trend</h3>
+                            <canvas id="trendChart"></canvas>
+                        </div>
+                        <div class="chart-container-glass">
+                            <h3 class="chart-title">🎯 Skill Breakdown</h3>
+                            <canvas id="radarChart"></canvas>
+                        </div>
+                    </div>
+
                     <!-- Subject Performance -->
                     <h3 class="section-subtitle">📈 Bo'limlar bo'yicha</h3>
                     <div id="subjectBars" class="subject-bars"></div>
@@ -352,6 +374,42 @@
     <div id="toast" class="toast">
         <span id="toastIcon" class="toast-icon">✅</span>
         <span id="toastMsg" class="toast-msg"></span>
+    </div>
+
+    <!-- CBT Simulator Overlay -->
+    <div id="cbtOverlay" class="cbt-overlay hidden">
+        <div class="cbt-header">
+            <div class="cbt-header-left">
+                <span class="cbt-logo">🎓 CBT Simulator</span>
+                <span id="cbtSubject" class="cbt-sub-title">Reading Practice</span>
+            </div>
+            <div class="cbt-header-center">
+                <div class="cbt-timer" id="cbtTimer">60:00</div>
+            </div>
+            <div class="cbt-header-right">
+                <button class="btn btn-danger btn-sm" onclick="closeCBTSimulator()">Exit</button>
+            </div>
+        </div>
+
+        <div class="cbt-workspace">
+            <div class="cbt-passage-side" id="cbtPassageSide">
+                <div class="cbt-passage-content" id="cbtPassageText">
+                    <!-- Passage text goes here -->
+                </div>
+            </div>
+            <div class="cbt-question-side">
+                <div class="cbt-question-container" id="cbtQuestionArea">
+                    <!-- Questions go here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="cbt-footer">
+            <div class="cbt-nav-pills" id="cbtNavPills">
+                <!-- Question buttons 1-40 -->
+            </div>
+            <button class="btn btn-primary" onclick="submitCBT()">Finish & Submit</button>
+        </div>
     </div>
 
     <script src="app.js"></script>

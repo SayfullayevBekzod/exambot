@@ -8,6 +8,11 @@ let currentFcIndex = 0;
 let timerInterval = null;
 let isStaticMode = false; // true = GitHub Pages (no API)
 let API_BASE = '';
+let trendChart = null;
+let radarChart = null;
+let cbtTimerInterval = null;
+let cbtQuestions = [];
+let cbtAnswers = {};
 
 // === Init ===
 document.addEventListener('DOMContentLoaded', async () => {
@@ -523,6 +528,225 @@ async function loadStats() {
     } else {
         lbDiv.innerHTML = '<div class="empty-state"><div class="es-icon">🏆</div><div class="es-text">Reyting tez orada</div></div>';
     }
+
+    // --- Interactive Charts ---
+    initTrendChart(data.chart_trend || []);
+    initRadarChart(data.subject_stats || []);
+}
+
+function initTrendChart(trendData) {
+    const ctx = document.getElementById('trendChart');
+    if (!ctx) return;
+
+    if (trendChart) trendChart.destroy();
+
+    const labels = trendData.length > 0 ? trendData.map(d => d.date) : ['No Data'];
+    const values = trendData.length > 0 ? trendData.map(d => d.pct) : [0];
+
+    trendChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Band Score %',
+                data: values,
+                borderColor: '#6366f1',
+                backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                borderWidth: 3,
+                tension: 0.4,
+                fill: true,
+                pointBackgroundColor: '#fff',
+                pointBorderColor: '#6366f1',
+                pointRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: { beginAtZero: true, max: 100, grid: { color: 'rgba(255,255,255,0.05)' } },
+                x: { grid: { display: false } }
+            }
+        }
+    });
+}
+
+function initRadarChart(stats) {
+    const ctx = document.getElementById('radarChart');
+    if (!ctx) return;
+
+    if (radarChart) radarChart.destroy();
+
+    const labels = stats.length >= 3 ? stats.map(s => s.name) : ['Listening', 'Reading', 'Grammar', 'Vocabulary'];
+    const values = stats.length >= 3 ? stats.map(s => s.avg) : [0, 0, 0, 0];
+
+    radarChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Skill Level %',
+                data: values,
+                backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                borderColor: '#06b6d4',
+                pointBackgroundColor: '#06b6d4',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: { display: false },
+                    grid: { color: 'rgba(255,255,255,0.1)' },
+                    angleLines: { color: 'rgba(255,255,255,0.1)' },
+                    pointLabels: { color: '#94a3b8', font: { size: 10 } }
+                }
+            }
+        }
+    });
+}
+
+// ==========================================
+//  CBT SIMULATOR
+// ==========================================
+
+async function openCBTSimulator() {
+    // Check if premium for CBT (optional, but requested by user in prev logs)
+    const prem = await apiFetch('/premium/status');
+    if (prem && !prem.is_premium && !isStaticMode) {
+        showToast('👑', 'Premium obuna kerak!');
+        switchTab('premium');
+        return;
+    }
+
+    document.getElementById('cbtOverlay').classList.remove('hidden');
+
+    // Fetch Reading questions for CBT
+    let questions = await apiFetch('/questions/18'); // Assuming 18 is Reading based on previous logs or data
+    if (!questions || questions.length === 0) {
+        // Mock data for demo if no reading subject found
+        questions = Array(40).fill(0).map((_, i) => ({
+            id: 1000 + i,
+            text: `Question ${i + 1}: Based on the passage, what is the main argument regarding technology?`,
+            options: { a: 'It is highly beneficial', b: 'It is harmful', c: 'It is neutral', d: 'It is inevitable' },
+            correct: 'a'
+        }));
+    }
+
+    startCBT(questions);
+}
+
+function closeCBTSimulator(force = false) {
+    if (!force && !confirm('Chindan ham chiqmoqchimisiz? Natijalar saqlanmaydi.')) return;
+    document.getElementById('cbtOverlay').classList.add('hidden');
+    clearInterval(cbtTimerInterval);
+}
+
+function startCBT(questions) {
+    cbtQuestions = questions.slice(0, 40);
+    cbtAnswers = {};
+
+    document.getElementById('cbtPassageText').innerHTML = `
+        <h2>The Evolution of Modern Technology</h2>
+        <p>In the contemporary era, the rapid progression of <b>information technology</b> has fundamentally altered the landscape of human interaction and economic structures. Unlike previous industrial revolutions, the current digital age is characterized by the velocity and ubiquity of data transfer.</p>
+        <p>Proponents argue that digital integration fosters <i>unprecedented transparency</i> and accessibility. For instance, the democratization of information allows individuals to acquire specialized knowledge without traditional institutional barriers. This paradigm shift has notably empowered marginalized communities across the globe.</p>
+        <p>However, skeptics raise concerns regarding the <b>erosion of privacy</b> and the potential for algorithmic bias. As artificial intelligence models become increasingly autonomous, the ethical implications of automated decision-making warrant rigorous scrutiny. The balance between innovation and regulation remains a central debate in modern policy design.</p>
+        <p>Furthermore, the psychological impact of prolonged connectivity is a subject of ongoing academic research. Studies suggest that while digital tools enhance productivity, they may also contribute to increased levels of anxiety and cognitive fragmentation among younger demographics.</p>
+    `;
+
+    renderCBTNav();
+    showCBTQuestion(0);
+    startCBTTimer(60 * 60); // 60 minutes
+}
+
+function renderCBTNav() {
+    const nav = document.getElementById('cbtNavPills');
+    nav.innerHTML = cbtQuestions.map((_, i) => `
+        <div class="cbt-pill" id="cbtPill_${i}" onclick="showCBTQuestion(${i})">${i + 1}</div>
+    `).join('');
+}
+
+function showCBTQuestion(index) {
+    const q = cbtQuestions[index];
+    const area = document.getElementById('cbtQuestionArea');
+
+    // Update active pill
+    document.querySelectorAll('.cbt-pill').forEach(p => p.classList.remove('active'));
+    document.getElementById(`cbtPill_${index}`).classList.add('active');
+
+    area.innerHTML = `
+        <div class="cbt-q-item fade-in">
+            <div class="cbt-q-text">${q.text}</div>
+            <div class="cbt-opts">
+                ${['a', 'b', 'c', 'd'].map(k => `
+                    <div class="cbt-opt ${cbtAnswers[index] === k ? 'selected' : ''}" onclick="selectCBTAnswer(${index}, '${k}')">
+                        <div class="cbt-opt-radio"></div>
+                        <span>${q.options[k]}</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
+function selectCBTAnswer(index, value) {
+    cbtAnswers[index] = value;
+    document.querySelectorAll('.cbt-opt').forEach(o => o.classList.remove('selected'));
+    // Re-render current question to show selection (or just DOM update for speed)
+    showCBTQuestion(index);
+
+    // Mark pill as answered
+    document.getElementById(`cbtPill_${index}`).classList.add('answered');
+}
+
+function startCBTTimer(seconds) {
+    clearInterval(cbtTimerInterval);
+    let remaining = seconds;
+    const timerEl = document.getElementById('cbtTimer');
+
+    cbtTimerInterval = setInterval(() => {
+        remaining--;
+        const mins = Math.floor(remaining / 60);
+        const secs = remaining % 60;
+        timerEl.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+        if (remaining <= 300) timerEl.style.background = '#e67e22'; // 5 min warning
+        if (remaining <= 60) timerEl.style.background = '#c0392b'; // 1 min warning
+
+        if (remaining <= 0) {
+            clearInterval(cbtTimerInterval);
+            alert('Vaqt tugadi!');
+            submitCBT();
+        }
+    }, 1000);
+}
+
+async function submitCBT() {
+    let score = 0;
+    cbtQuestions.forEach((q, i) => {
+        if (cbtAnswers[i] === q.correct) score++;
+    });
+
+    const total = cbtQuestions.length;
+    const pct = Math.round((score / total) * 100);
+
+    showToast('📈', `CBT yakunlandi: ${score}/${total}`);
+
+    // Save to results via same API
+    if (userId && !isStaticMode) {
+        await fetch(`${API_BASE}/results`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ user_id: userId, subject_id: 18, score, total, percentage: pct, is_mock: true }),
+        });
+    }
+
+    closeCBTSimulator(true);
+    switchTab('stats');
 }
 
 // ==========================================
