@@ -4,7 +4,19 @@ from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 
 from config import DB_URL
 
-engine = create_engine(DB_URL, echo=False)
+# Engine sozlamalari (PostgreSQL uchun optimallash)
+if "postgresql" in DB_URL:
+    engine = create_engine(
+        DB_URL,
+        echo=False,
+        pool_pre_ping=True,  # Ulanish o'chib qolganini tekshirish
+        pool_recycle=300,    # Ulanishni har 5 daqiqada yangilash
+        pool_size=10,        # Asosiy ulanishlar soni
+        max_overflow=20      # Qo'shimcha ulanishlar
+    )
+else:
+    engine = create_engine(DB_URL, echo=False)
+
 Session = sessionmaker(bind=engine)
 Base = declarative_base()
 
