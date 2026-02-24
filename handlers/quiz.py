@@ -130,6 +130,9 @@ async def _send_quiz_question(query, context):
     try:
         q = session.query(Question).get(qid)
         if not q:
+            logger.error(f"Savol #{qid} topilmadi!")
+            await query.message.reply_text("❌ Xatolik: Savol topilmadi. Test to'xtatildi.")
+            context.user_data.pop("quiz", None)
             return
 
         options = q.get_options()

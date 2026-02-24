@@ -1,4 +1,5 @@
 import json
+from sqlalchemy import func
 from database import get_session, Subject, Question
 
 
@@ -49,7 +50,7 @@ def import_from_json(json_data):
             return 0, subject_name, "❌ Savollar topilmadi!"
 
         # Fan mavjud bo'lsa topish, bo'lmasa yaratish
-        subject = session.query(Subject).filter_by(name=subject_name).first()
+        subject = session.query(Subject).filter(func.lower(Subject.name) == func.lower(subject_name)).first()
         if not subject:
             subject = Subject(name=subject_name, emoji=emoji, description=description)
             session.add(subject)

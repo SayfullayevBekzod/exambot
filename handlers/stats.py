@@ -172,7 +172,7 @@ def _build_leaderboard():
         leaderboard = (
             session.query(
                 UserResult.user_id,
-                UserResult.full_name,
+                func.max(UserResult.full_name).label("full_name"),
                 func.avg(UserResult.percentage).label("avg_pct"),
                 func.count(UserResult.id).label("test_count"),
             )

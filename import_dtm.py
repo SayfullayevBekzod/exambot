@@ -9,6 +9,7 @@ import sys
 # Loyihaning root papkasini topish
 sys.path.insert(0, os.path.dirname(__file__))
 
+from sqlalchemy import func
 from database import init_db, get_session, Subject, Question
 
 SUBJECT_EMOJIS = {
@@ -42,7 +43,7 @@ def import_dtm(filepath):
                 continue
 
             # Fan yaratish yoki topish
-            subject = session.query(Subject).filter_by(name=subject_name).first()
+            subject = session.query(Subject).filter(func.lower(Subject.name) == func.lower(subject_name)).first()
             if not subject:
                 emoji = SUBJECT_EMOJIS.get(subject_name, "📚")
                 subject = Subject(name=subject_name, emoji=emoji, description=f"{subject_name} fani")
