@@ -260,9 +260,13 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        pass
-    except Exception as e:
-        logger.error(f"Fatal error: {e}", exc_info=True)
+    while True:
+        try:
+            main()
+        except KeyboardInterrupt:
+            print("🛑 Bot to'xtatildi (KeyboardInterrupt).")
+            break
+        except Exception as e:
+            logger.error(f"❌ Kritik xato yuz berdi: {e}", exc_info=True)
+            print(f"🔄 Bot 15 soniyadan keyin qayta ishga tushadi...")
+            time.sleep(15)
