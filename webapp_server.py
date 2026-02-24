@@ -174,7 +174,7 @@ def api_stats():
                 UserResult.full_name,
                 func.avg(UserResult.percentage).label('avg_pct'),
             )
-            .group_by(UserResult.user_id)
+            .group_by(UserResult.user_id, UserResult.full_name)
             .order_by(func.avg(UserResult.percentage).desc())
             .limit(10)
             .all()
