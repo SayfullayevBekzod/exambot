@@ -60,7 +60,9 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
     
     logger.error("Xato yuz berdi:", exc_info=context.error)
     
-    # Traceback
+    # Conflict xatolarini (deployment paytidagi) adminga yubormaymiz
+    if "Conflict" in str(context.error) or "terminated by other getUpdates" in str(context.error).lower():
+        return
     tb_list = traceback.format_exception(None, context.error, context.error.__traceback__)
     tb_string = "".join(tb_list)
     
