@@ -1,6 +1,6 @@
 from contextlib import contextmanager
 from datetime import datetime
-from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime, ForeignKey, Float, Boolean, text
+from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime, ForeignKey, Float, Boolean, text, BigInteger
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 
 from config import DB_URL
@@ -56,7 +56,7 @@ class Question(Base):
 class UserResult(Base):
     __tablename__ = "user_results"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, nullable=False, index=True)
+    user_id = Column(BigInteger, nullable=False, index=True)
     username = Column(String(100), default="")
     full_name = Column(String(200), default="")
     subject_id = Column(Integer, ForeignKey("subjects.id"), nullable=False, index=True)
@@ -72,7 +72,7 @@ class UserResult(Base):
 class WrongAnswer(Base):
     __tablename__ = "wrong_answers"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, nullable=False, index=True)
+    user_id = Column(BigInteger, nullable=False, index=True)
     question_id = Column(Integer, ForeignKey("questions.id"), nullable=False)
     user_answer = Column(String(1), nullable=False)
     correct_answer = Column(String(1), nullable=False)
@@ -84,7 +84,7 @@ class WrongAnswer(Base):
 class UserAchievement(Base):
     __tablename__ = "user_achievements"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, nullable=False, index=True)
+    user_id = Column(BigInteger, nullable=False, index=True)
     achievement_key = Column(String(50), nullable=False)
     achievement_name = Column(String(100), nullable=False)
     achievement_emoji = Column(String(10), default="🏅")
@@ -94,7 +94,7 @@ class UserAchievement(Base):
 class UserSettings(Base):
     __tablename__ = "user_settings"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, unique=True, nullable=False, index=True)
+    user_id = Column(BigInteger, unique=True, nullable=False, index=True)
     reminder_enabled = Column(Boolean, default=False)
     reminder_time = Column(String(5), default="09:00")
     daily_test_enabled = Column(Boolean, default=False)
@@ -106,7 +106,7 @@ class UserSettings(Base):
 class DailyStreak(Base):
     __tablename__ = "daily_streaks"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, unique=True, nullable=False, index=True)
+    user_id = Column(BigInteger, unique=True, nullable=False, index=True)
     current_streak = Column(Integer, default=0)
     longest_streak = Column(Integer, default=0)
     last_active_date = Column(String(10), default="")
@@ -116,7 +116,7 @@ class DailyStreak(Base):
 class SpacedRepetition(Base):
     __tablename__ = "spaced_repetition"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, nullable=False, index=True)
+    user_id = Column(BigInteger, nullable=False, index=True)
     question_id = Column(Integer, ForeignKey("questions.id"), nullable=False)
     easiness_factor = Column(Float, default=2.5)
     interval = Column(Integer, default=1)
@@ -129,7 +129,7 @@ class SpacedRepetition(Base):
 class Flashcard(Base):
     __tablename__ = "flashcards"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, nullable=False, index=True)
+    user_id = Column(BigInteger, nullable=False, index=True)
     front = Column(Text, nullable=False)
     back = Column(Text, nullable=False)
     example = Column(Text, default="")
@@ -141,7 +141,7 @@ class Flashcard(Base):
 class StudyPlan(Base):
     __tablename__ = "study_plans"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, unique=True, nullable=False, index=True)
+    user_id = Column(BigInteger, unique=True, nullable=False, index=True)
     plan_type = Column(String(10), default="30")
     target_band = Column(Float, default=6.5)
     start_date = Column(String(10), default="")
@@ -152,7 +152,7 @@ class StudyPlan(Base):
 class PremiumSubscription(Base):
     __tablename__ = "premium_subscriptions"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, nullable=False, index=True)
+    user_id = Column(BigInteger, nullable=False, index=True)
     plan_key = Column(String(20), nullable=False)
     amount = Column(Integer, nullable=False)
     payment_id = Column(String(100), default="")

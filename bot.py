@@ -168,7 +168,7 @@ def main():
         app.add_handler(CommandHandler(cmd, handler))
 
     # === To'lov handlerlari (Manual Receipt) ===
-    app.add_handler(MessageHandler(filters.PHOTO, handle_premium_receipt))
+    app.add_handler(MessageHandler(filters.PHOTO | filters.Document.ALL, handle_premium_receipt))
 
     # === Callback querylar ===
     callbacks = [

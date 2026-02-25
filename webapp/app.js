@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('userAvatar').textContent = name.charAt(0).toUpperCase();
     } else {
         const params = new URLSearchParams(window.location.search);
-        userId = parseInt(params.get('user_id')) || 1258119183;
+        userId = parseInt(params.get('user_id')) || 0;
         document.getElementById('userAvatar').textContent = 'T';
     }
 

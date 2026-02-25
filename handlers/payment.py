@@ -140,7 +140,7 @@ async def handle_premium_receipt(update: Update, context: ContextTypes.DEFAULT_T
 
     # Foydalanuvchiga tasdiqlash
     await update.message.reply_text(
-        "✅ <b>Chek qabul qilindi!</b>\n\n"
+        "✅ <b>Xabar qabul qilindi!</b>\n\n"
         "📋 Admin tekshirib, premium aktivlashtiriladi.\n"
         "⏳ Odatda 1-24 soat ichida tasdiqlanadi.\n\n"
         "Sabr qiling! 🙏",
@@ -268,7 +268,10 @@ async def admin_approve_callback(update: Update, context: ContextTypes.DEFAULT_T
 
     except Exception as e:
         session.rollback()
-        await query.answer(f"❌ Xato: {e}", show_alert=True)
+        import traceback
+        err_tb = traceback.format_exc()
+        print(f"Approval error: {e}\n{err_tb}")
+        await query.answer(f"❌ Xato: {str(e)[:100]}", show_alert=True)
     finally:
         session.close()
 

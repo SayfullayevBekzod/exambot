@@ -143,8 +143,8 @@ async def admin_stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     try:
         total_subjects = session.query(func.count(Subject.id)).scalar()
         total_questions = session.query(func.count(Question.id)).scalar()
-        total_results = session.query(func.count(UserResult.id)).scalar()
-        unique_users = session.query(func.count(func.distinct(UserResult.user_id))).scalar()
+        total_results = session.query(func.count(UserResult.id)).filter_by(is_mock=False).scalar()
+        unique_users = session.query(func.count(func.distinct(UserResult.user_id))).filter(UserResult.is_mock == False).scalar()
 
         # Fan bo'yicha savollar soni
         subjects = session.query(Subject).all()
