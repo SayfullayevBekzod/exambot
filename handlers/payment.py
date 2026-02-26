@@ -26,10 +26,12 @@ PREMIUM_LOCKED_TEXT = (
 )
 
 # To'lov ma'lumotlari (admin .env ga o'zi yozadi)
+from config import PAYMENT_CARD_NUMBER, PAYMENT_CARD_HOLDER
+
 PAYMENT_INFO = (
     "💳 <b>To'lov usullari:</b>\n\n"
-    "🏦 Karta raqami: <code>8600 1234 5678 9012</code>\n"
-    "👤 Egasi: <b>Test Testov</b>\n\n"
+    f"🏦 Karta raqami: <code>{PAYMENT_CARD_NUMBER}</code>\n"
+    f"👤 Egasi: <b>{PAYMENT_CARD_HOLDER}</b>\n\n"
     "📱 Yoki Click/Payme orqali yuqoridagi kartaga o'tkazing."
 )
 
