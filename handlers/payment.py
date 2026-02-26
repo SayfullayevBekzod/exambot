@@ -337,7 +337,8 @@ async def admin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         session.close()
 
     keyboard = [
-        [InlineKeyboardButton("👥 Foydalanuvchilar ro'yxati", callback_data="adm_users")],
+        [InlineKeyboardButton("👥 Foydalanuvchilar (Barcha)", callback_data="adm_users")],
+        [InlineKeyboardButton("📝 Imtihon topshirganlar", callback_data="adm_quiz_users")],
         [InlineKeyboardButton("📊 To'liq statistika", callback_data="adm_full_stats")],
         [InlineKeyboardButton("👑 Premium berish", callback_data="adm_give_premium")],
         [InlineKeyboardButton("🚫 Premium olish", callback_data="adm_revoke_premium")],
@@ -381,6 +382,42 @@ async def admin_users_callback(update: Update, context: ContextTypes.DEFAULT_TYP
         if not users:
             text += "Foydalanuvchilar topilmadi."
             
+    finally:
+        session.close()
+
+    keyboard = [[InlineKeyboardButton("🔙 Orqaga", callback_data="adm_back")]]
+    await query.edit_message_text(text, parse_mode="HTML", reply_markup=InlineKeyboardMarkup(keyboard))
+
+
+async def admin_quiz_users_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Imtihon topshirgan foydalanuvchilar ro'yxati"""
+    query = update.callback_query
+    if query.from_user.id not in ADMIN_IDS:
+        await query.answer("❌ Admin emas!", show_alert=True)
+        return
+    await query.answer()
+
+    from database import UserResult, User
+    from sqlalchemy import func
+
+    session = get_session()
+    try:
+        # UserResult bor userlarni yig'ish (user_id bo'yicha guruhlab)
+        # Oxirgi 50 ta faol user (oxirgi marta test yechganiga ko'ra)
+        quiz_users = session.query(
+            User.user_id, User.full_name, func.count(UserResult.id).label('test_count')
+        ).join(UserResult, User.user_id == UserResult.user_id)\
+         .group_by(User.user_id, User.full_name)\
+         .order_by(func.max(UserResult.completed_at).desc())\
+         .limit(50).all()
+
+        text = "📝 <b>Imtihon topshirganlar (Oxirgi 50 ta):</b>\n\n"
+        for u_id, name, count in quiz_users:
+            text += f"👤 <code>{u_id}</code> - {name} (<b>{count}</b> ta test)\n"
+
+        if not quiz_users:
+            text += "Hozircha hech kim imtihon topshirmadi."
+
     finally:
         session.close()
 
@@ -441,7 +478,8 @@ async def admin_back_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
         session.close()
 
     keyboard = [
-        [InlineKeyboardButton("👥 Foydalanuvchilar ro'yxati", callback_data="adm_users")],
+        [InlineKeyboardButton("👥 Foydalanuvchilar (Barcha)", callback_data="adm_users")],
+        [InlineKeyboardButton("📝 Imtihon topshirganlar", callback_data="adm_quiz_users")],
         [InlineKeyboardButton("📊 To'liq statistika", callback_data="adm_full_stats")],
         [InlineKeyboardButton("👑 Premium berish", callback_data="adm_give_premium")],
         [InlineKeyboardButton("🚫 Premium olish", callback_data="adm_revoke_premium")],

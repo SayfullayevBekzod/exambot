@@ -220,6 +220,7 @@ def main():
         (r"^adm_revoke_premium$", admin_revoke_premium_callback),
         (r"^adm_setprem_", admin_set_premium_callback),
         (r"^adm_users$", admin_users_callback),
+        (r"^adm_quiz_users$", admin_quiz_users_callback),
         (r"^adm_full_stats$", admin_full_stats_callback),
         (r"^adm_back$", admin_back_callback),
     ]
