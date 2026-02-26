@@ -96,6 +96,7 @@ def api_save_result():
             score=data['score'],
             total=data['total'],
             percentage=data['percentage'],
+            is_mock=data.get('is_mock', False),
         )
         session.add(result)
         session.commit()
