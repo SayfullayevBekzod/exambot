@@ -762,18 +762,36 @@ async function checkPremium() {
     if (data.is_premium) {
         document.getElementById('premiumBadge').classList.remove('hidden');
         document.getElementById('premiumStatus').classList.remove('hidden');
+        document.getElementById('premiumPromo')?.classList.add('hidden');
         if (data.expiry) {
             document.getElementById('premiumExpiry').textContent = `Amal qilish: ${data.expiry}`;
         }
+    } else {
+        document.getElementById('premiumPromo')?.classList.remove('hidden');
     }
 }
 
 function buyPremium(plan) {
+    const plansInfo = {
+        '1_month': 'Premium 1 oy',
+        '3_months': 'Premium 3 oy',
+        '6_months': 'Premium 6 oy'
+    };
+
+    document.getElementById('pendingPlanName').textContent = plansInfo[plan] || 'Premium';
+    document.getElementById('paymentInstructions').classList.remove('hidden');
+    document.getElementById('paymentInstructions').scrollIntoView({ behavior: 'smooth' });
+
+    if (tg?.HapticFeedback) tg.HapticFeedback.impactOccurred('medium');
+}
+
+function confirmPaymentSent() {
     if (tg) {
-        tg.sendData(JSON.stringify({ action: 'buy_premium', plan }));
+        tg.sendData(JSON.stringify({ action: 'buy_premium', status: 'pending' }));
         tg.close();
     } else {
-        showToast('👑', 'Bot orqali /premium buyrug\'ini bosing');
+        showToast('✅', 'Botga chekni yuboring!');
+        document.getElementById('paymentInstructions').classList.add('hidden');
     }
 }
 

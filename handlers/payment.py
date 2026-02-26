@@ -377,7 +377,8 @@ async def admin_users_callback(update: Update, context: ContextTypes.DEFAULT_TYP
             from database import UserSettings
             settings = session.query(UserSettings).filter_by(user_id=u.user_id).first()
             status = "👑" if settings and settings.is_premium else "👤"
-            text += f"{status} <code>{u.user_id}</code> - {u.full_name}\n"
+            username = f" (@{u.username})" if u.username else ""
+            text += f"{status} <code>{u.user_id}</code> - {u.full_name}{username}\n"
         
         if not users:
             text += "Foydalanuvchilar topilmadi."
@@ -405,15 +406,16 @@ async def admin_quiz_users_callback(update: Update, context: ContextTypes.DEFAUL
         # UserResult bor userlarni yig'ish (user_id bo'yicha guruhlab)
         # Oxirgi 50 ta faol user (oxirgi marta test yechganiga ko'ra)
         quiz_users = session.query(
-            User.user_id, User.full_name, func.count(UserResult.id).label('test_count')
+            User.user_id, User.full_name, User.username, func.count(UserResult.id).label('test_count')
         ).join(UserResult, User.user_id == UserResult.user_id)\
-         .group_by(User.user_id, User.full_name)\
+         .group_by(User.user_id, User.full_name, User.username)\
          .order_by(func.max(UserResult.completed_at).desc())\
          .limit(50).all()
 
         text = "📝 <b>Imtihon topshirganlar (Oxirgi 50 ta):</b>\n\n"
-        for u_id, name, count in quiz_users:
-            text += f"👤 <code>{u_id}</code> - {name} (<b>{count}</b> ta test)\n"
+        for u_id, name, username, count in quiz_users:
+            uname = f" (@{username})" if username else ""
+            text += f"👤 <code>{u_id}</code> - {name}{uname} (<b>{count}</b> ta test)\n"
 
         if not quiz_users:
             text += "Hozircha hech kim imtihon topshirmadi."

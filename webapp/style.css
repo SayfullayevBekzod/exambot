@@ -525,6 +525,140 @@ body {
     margin-top: 4px;
 }
 
+/* Premium Promo Banner */
+.premium-promo {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(217, 119, 6, 0.05));
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-promo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.1), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    20% {
+        left: 200%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+.premium-promo:active {
+    transform: scale(0.98);
+    background: rgba(251, 191, 36, 0.15);
+}
+
+.pp-icon {
+    font-size: 32px;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4));
+}
+
+.pp-info {
+    flex: 1;
+}
+
+.pp-title {
+    font-weight: 800;
+    font-size: 16px;
+    color: #fbbf24;
+    margin-bottom: 2px;
+}
+
+.pp-sub {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.pp-arrow {
+    font-size: 18px;
+    color: #fbbf24;
+    opacity: 0.6;
+}
+
+/* Payment Instructions Card */
+.payment-instructions {
+    margin-top: 24px;
+    padding: 20px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(99, 102, 241, 0.05));
+}
+
+.pi-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.pi-details {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.pi-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.pi-row:last-child {
+    margin-bottom: 0;
+}
+
+.pi-label {
+    color: var(--text-muted);
+}
+
+.pi-value code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    color: #fff;
+}
+
+.pi-steps {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.pi-steps p {
+    margin-bottom: 6px;
+}
+
+.btn-full {
+    width: 100%;
+}
+
 /* === Quiz === */
 .quiz-header {
     margin-bottom: 16px;

@@ -46,8 +46,8 @@ from handlers.payment import (
     premium_command, buy_premium_callback, go_premium_callback,
     handle_premium_receipt, admin_approve_callback, admin_reject_callback,
     admin_command, admin_give_premium_callback, admin_revoke_premium_callback,
-    admin_set_premium_callback, admin_users_callback, admin_full_stats_callback,
-    admin_back_callback,
+    admin_set_premium_callback, admin_users_callback, admin_quiz_users_callback,
+    admin_full_stats_callback, admin_back_callback,
 )
 
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)

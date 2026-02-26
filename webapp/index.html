@@ -75,6 +75,15 @@
                         </div>
                         <div class="csp-badge">New</div>
                     </div>
+
+                    <div id="premiumPromo" class="premium-promo hidden" onclick="switchTab('premium')">
+                        <div class="pp-icon">👑</div>
+                        <div class="pp-info">
+                            <div class="pp-title">Premiumga o'ting!</div>
+                            <div class="pp-sub">Barcha funksiyalarni oching va reklamasiz o'qing</div>
+                        </div>
+                        <div class="pp-arrow">→</div>
+                    </div>
                 </div>
 
                 <!-- Difficulty Selection -->
@@ -340,6 +349,31 @@
                         <div class="ps-icon">✅</div>
                         <div class="ps-active">Premium faol!</div>
                         <div id="premiumExpiry" class="ps-expiry"></div>
+                    </div>
+
+                    <div id="paymentInstructions" class="payment-instructions hidden card-glass fade-in">
+                        <h3 class="pi-title">💳 To'lov Ma'lumotlari</h3>
+                        <div class="pi-details">
+                            <div class="pi-row">
+                                <span class="pi-label">Karta raqami:</span>
+                                <span class="pi-value"><code>8600 1234 5678 9012</code></span>
+                            </div>
+                            <div class="pi-row">
+                                <span class="pi-label">Karta egasi:</span>
+                                <span class="pi-value"><b>Test Testov</b></span>
+                            </div>
+                            <div class="pi-row">
+                                <span class="pi-label">Sotib olinmoqda:</span>
+                                <span id="pendingPlanName" class="pi-value">Premium 1 oy</span>
+                            </div>
+                        </div>
+                        <div class="pi-steps">
+                            <p>1. Yuqoridagi kartaga to'lovni amalga oshiring.</p>
+                            <p>2. To'lov chekini (screenshot) botga yuboring.</p>
+                            <p>3. Admin 1-24 soat ichida tasdiqlaydi.</p>
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="confirmPaymentSent()">✅ Chekni botga
+                            yubordim</button>
                     </div>
                 </div>
             </div>
