@@ -25,6 +25,15 @@ Session = sessionmaker(bind=engine)
 Base = declarative_base()
 
 
+class User(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(BigInteger, unique=True, nullable=False, index=True)
+    username = Column(String(100), default="")
+    full_name = Column(String(200), default="")
+    joined_at = Column(DateTime, default=datetime.utcnow)
+
+
 class Subject(Base):
     __tablename__ = "subjects"
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -191,7 +200,7 @@ def fix_sequences():
         return
 
     tables = [
-        "subjects", "questions", "user_results", "wrong_answers",
+        "users", "subjects", "questions", "user_results", "wrong_answers",
         "user_achievements", "user_settings", "daily_streaks",
         "spaced_repetition", "flashcards", "study_plans",
         "premium_subscriptions"

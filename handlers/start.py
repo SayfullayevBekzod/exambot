@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ContextTypes
 
-from database import get_session, Subject
+from database import get_session, Subject, User
 from keyboards.inline import subjects_keyboard
 from keyboards.reply import main_menu_keyboard
 
@@ -71,6 +71,25 @@ NO_SUBJECTS_TEXT = "\n😔 Hozircha bo'limlar qo'shilmagan."
 
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+    session = get_session()
+    try:
+        # Userni ro'yxatga olish (agar bo'lmasa)
+        existing_user = session.query(User).filter_by(user_id=user.id).first()
+        if not existing_user:
+            new_user = User(
+                user_id=user.id,
+                username=user.username or "",
+                full_name=user.full_name or ""
+            )
+            session.add(new_user)
+            session.commit()
+            print(f"🆕 Yangi foydalanuvchi ro'yxatga olindi: {user.full_name} ({user.id})")
+    except Exception as e:
+        print(f"❌ User registration error: {e}")
+    finally:
+        session.close()
+
     await update.message.reply_text("⌨️ Menyu tayyor!", reply_markup=main_menu_keyboard())
     kb = subjects_keyboard()
     if kb:

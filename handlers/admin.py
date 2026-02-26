@@ -6,7 +6,7 @@ from telegram import Update
 from telegram.ext import ContextTypes
 
 from config import ADMIN_IDS
-from database import get_session, Subject, Question, UserResult
+from database import get_session, Subject, Question, UserResult, User
 from utils.importer import import_from_json
 from sqlalchemy import func
 
@@ -144,7 +144,7 @@ async def admin_stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         total_subjects = session.query(func.count(Subject.id)).scalar()
         total_questions = session.query(func.count(Question.id)).scalar()
         total_results = session.query(func.count(UserResult.id)).filter_by(is_mock=False).scalar()
-        unique_users = session.query(func.count(func.distinct(UserResult.user_id))).filter(UserResult.is_mock == False).scalar()
+        unique_users = session.query(func.count(User.id)).scalar()
 
         # Fan bo'yicha savollar soni
         subjects = session.query(Subject).all()

@@ -5,7 +5,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 
 from config import ADMIN_IDS, PREMIUM_PLANS
-from database import get_session, UserSettings, PremiumSubscription, check_premium
+from database import get_session, UserSettings, PremiumSubscription, check_premium, User
 
 
 PREMIUM_FEATURES = (
@@ -330,7 +330,7 @@ async def admin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     session = get_session()
     try:
-        total_users = session.query(UserSettings).count()
+        total_users = session.query(User).count()
         premium_users = session.query(UserSettings).filter_by(is_premium=True).count()
         active_subs = session.query(PremiumSubscription).filter_by(is_active=True).count()
     finally:
@@ -368,12 +368,15 @@ async def admin_users_callback(update: Update, context: ContextTypes.DEFAULT_TYP
     session = get_session()
     try:
         # Oxirgi 50 ta foydalanuvchi
-        users = session.query(UserSettings).order_by(UserSettings.user_id.desc()).limit(50).all()
+        users = session.query(User).order_by(User.id.desc()).limit(50).all()
         
         text = "👥 <b>Foydalanuvchilar (Oxirgi 50 ta):</b>\n\n"
         for u in users:
-            status = "👑" if u.is_premium else "👤"
-            text += f"{status} <code>{u.user_id}</code>\n"
+            # Premium holatini UserSettings dan olish kerak
+            from database import UserSettings
+            settings = session.query(UserSettings).filter_by(user_id=u.user_id).first()
+            status = "👑" if settings and settings.is_premium else "👤"
+            text += f"{status} <code>{u.user_id}</code> - {u.full_name}\n"
         
         if not users:
             text += "Foydalanuvchilar topilmadi."
@@ -431,7 +434,7 @@ async def admin_back_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     session = get_session()
     try:
-        total_users = session.query(UserSettings).count()
+        total_users = session.query(User).count()
         premium_users = session.query(UserSettings).filter_by(is_premium=True).count()
         active_subs = session.query(PremiumSubscription).filter_by(is_active=True).count()
     finally:
